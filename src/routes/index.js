@@ -1,52 +1,79 @@
 
 import Project from "../pages/Project/Project";
 import HomePage from "../pages/HomePage/HomePage";
-// import InterViewCT from "../pages/Interview/InterViewCT";
+import InterViewCT from "../pages/Interview/InterViewCT";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import NewsPage from "../pages/News/NewsPage";
 import ProductSer from "../pages/Service/ProductSer";
 import ContactPage from "../pages/ContactCT/ContactPage";
+// import NewsTable from "../admin/News/NewsTable";
+import DefauComponent from '../admin/DefautComponent/DefautComponent'
+import DetailNewsPage from "../pages/News/DetailNewsPage";
+import SignIn from "../admin/Account/SignIn";
+import SignUp from "../admin/Account/SignUp";
+import { withAuthProtected } from "../admin/Account/ProtectedAuth";
 
 export const routes = [
     {
         path:'/',
         element:HomePage,
-        title: "Đông Sơn Event",
-        isShowHeader: true
+        isShowHeader: true,
+        
     },
-    // {
-    //     path:'/gioi-thieu',
-    //     element:InterViewCT,
-    //     title: "Giới Thiệu",
-    //     isShowHeader: true
-    // },
+    {
+        path:'/gioi-thieu',
+        element:InterViewCT,
+        isShowHeader: true,
+        
+    },
     {
         path:'/du-an',
         element:Project,
-        title: "Dự Án",
-        isShowHeader: true
+        isShowHeader: true,
+        
     },
     {
-        path:'/san-pham',
+        path:'/don-vi',
         element:ProductSer,
-        title: "Sản Phẩm",
-        isShowHeader: true
+        isShowHeader: true,
+        
     },
     {
-        path:'/tin-tuc',
+        path:'/News',
         element:NewsPage,
-        title: "Tin Tức",
-        isShowHeader: true
+        isShowHeader: true,
+        
+    },
+    {
+        path:'/News/:slug',
+        element:DetailNewsPage,
+        isShowHeader: true,
+        
     },
     {
         path:'/lien-he',
         element:ContactPage,
-        title: "Liên Hệ",
-        isShowHeader: true
+        isShowHeader: true,
+        
     },
     {
         path:'*',
         title: "404",
         element:NotFoundPage
+    },
+    {
+        path:'admin/api/news',
+        // element:DefauComponent,
+        element:withAuthProtected(DefauComponent),
+        protected: true
+    },
+    {
+        path:'admin/api/signin',
+        element:SignIn,
+        protected: false
+    },
+    {
+        path:'admin/api/signup',
+        element:SignUp
     },
 ]

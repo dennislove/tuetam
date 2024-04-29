@@ -10,8 +10,8 @@ function NewContact() {
       id: 1,
       name: "user_name",
       type: "text",
-      placeholder: "Họ và Tên",
-      errorMessage: "Vui lòng nhập đúng họ tên",
+      placeholder: "Đơn vị",
+      errorMessage: "Vui lòng nhập đúng đơn vị",
       pattern:"^[A-Za-z0-9]{3,30}$",
       required:true
     },
@@ -19,8 +19,8 @@ function NewContact() {
       id: 2,
       name: "user_tel",
       type: "tel",
-      placeholder: "Số điện thoại",
-      errorMessage: "Vui lòng nhập đúng số điện thoại",
+      placeholder: "Hotline",
+      errorMessage: "Vui lòng nhập đúng hotline",
       pattern:"^0[0-9]{9}",
       required:true
     },
@@ -67,8 +67,8 @@ function NewContact() {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_n0oxbrb', 
-      'service_n0oxbrb',
+      .sendForm('service_tuetam', 
+      'template_st3ewci',
        form.current, {
         publicKey: 'CvbjwskOPXvbtYvm4',
       })
@@ -87,7 +87,7 @@ function NewContact() {
     <div className=' max-w-[1300px] lg:m-auto  pm:mx-10 relative'>
         <div className='relative text-center '>
             <div className='mb-5 text-center font-oxa'>
-                <h2 className='  font-normal text-[40px] text-white capitalize'>Liên Hệ</h2>
+                <h2 className='  font-normal text-[40px] text-white capitalize'>Liên Hệ Quảng Cáo</h2>
             </div>
             
         </div>

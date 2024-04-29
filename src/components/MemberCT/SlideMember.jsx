@@ -1,21 +1,40 @@
 import React, { useEffect, useState,useRef } from 'react';
 import '../MemberCT/style.css'
 import data from '../../assets/data.json'
+import { getDatabase, ref, child, get } from "firebase/database";
 
 function SlideMember() {
    
-    const members = data.datamember
+  const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    const dbRef = ref(getDatabase());
+
+    get(child(dbRef, `Product`))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const fetchedProduct = Object.values(snapshot.val()); // Extract data as array
+          setProduct(fetchedProduct);
+        } else {
+          console.log("No data available in Product");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
 
     const [activeTab, setActiveTab] = useState(1);
     const intervalRef = useRef(null);
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
-      setActiveTab((prevActiveTab) => (prevActiveTab + 1) % members.length);
+      setActiveTab((prevActiveTab) => (prevActiveTab + 1) % product.length);
     }, 3000);
 
     return () => clearInterval(intervalRef.current);
-  }, [members.length]);
+  }, [product.length]);
 
   const handleClickTab = (index) => {
     setActiveTab(index);
@@ -24,23 +43,23 @@ function SlideMember() {
   return (
     <div className='py-10'>
         <div className='mb-5 text-center font-oxa'>
-        <h2 className=' font-normal md:text-[40px]  sm:text-[35px] pm:text-[30px] text-white capitalize'>Đội Ngũ Đông Sơn Event</h2>
+        <h2 className=' font-normal md:text-[40px]  sm:text-[35px] pm:text-[30px] text-white capitalize'>Sản Phẩm Từ Trầm Hương</h2>
     </div>
         <div className="fui-testimonial-1 mt-10">
             
         <div className="testimonialWrap">
             <ul className="testimonialBodyList text-white">
-                {members.map((item, index) =>(
+                {product.map((item, index) =>(
                     <li key={index} className={`testimonialBodyItem ${activeTab === index ? 'active' : ''}`} data-tab={item.id}>
-                    <div className="testimonialRate text-yellow-600">Vị trí:<span className='text-white'>{item.location}</span>
+                    <div className="testimonialRate text-yellow-600">Giá bán:<span className='text-white'>{item.price}</span>
                         
                     </div>
-                    <p className='testimonialContent text-yellow-600 text-2xl font-bold'>Phương châm làm nghề</p>
+                    <p className='testimonialContent text-yellow-600 text-2xl font-bold'>Chi nhánh uy tín</p>
                     <p className="testimonialContent text-white text-xl">
-                        {item.title}
+                        {item.location}
                     </p>
                     <div className="testimonialBodyPersonal active">
-                        <div className="testimonialBodyPersonalImg"><img src={item.avatar} alt={item.name} loading='lazy'/></div>
+                        <div className="testimonialBodyPersonalImg"><img src={item.imageUrl} alt={item.name} loading='lazy'/></div>
                         <h4 className="testimonialBodyPersonalName">{item.name}</h4>
                     </div>
                 </li>
@@ -49,10 +68,10 @@ function SlideMember() {
                
             </ul>
             <ul className="testimoniaPersonalList ">
-                {members.map((item,index) =>(
+                {product.map((item,index) =>(
                     <li key={index} onClick={() => handleClickTab(index)} className={`testimoniaPersonalItem ${activeTab === index ? 'active' : ''}`} data-tab={item.id}>
                       <div className="testimoniaPersonalImage">
-                        <img  src={item.avatar} loading='lazy' alt={item.name} className='text-white text-xs' />
+                        <img  src={item.imageUrl} loading='lazy' alt={item.name} className='text-white text-xs' />
                       </div>
                     </li>
                 ))}

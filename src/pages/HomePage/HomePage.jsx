@@ -1,19 +1,20 @@
 import React from 'react'
-import Interview from '../../components/HomeComponent/Interview'
 import Project from '../../components/Project/Project'
 import Tourament from '../../components/Tour/Tourament'
 import SlideMember from '../../components/MemberCT/SlideMember'
 import Footer from '../../components/Footer/Footer'
+import VideoIntro from '../../components/Video/VideoIntro'
 
 function HomePage() {
   return (
     <div className='bg-[#000022] relative'>
-      <Interview/>
-      <Project/>
-      <Tourament/>
-      <SlideMember/>
-      <Footer/>
-    
+      <VideoIntro/>
+      <div className='mt-10'>
+        <Tourament/>
+        <Project/>
+        <SlideMember/>
+        <Footer/>
+      </div>
     </div>
   )
 }

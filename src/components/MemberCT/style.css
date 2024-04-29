@@ -62,8 +62,8 @@
     gap: 18px;
   }
   .fui-testimonial-1 .testimonialBodyPersonalImg {
-    width: 54px;
-    height: 54px;
+    width: 120px;
+    height: 120px;
     border-radius: 100rem;
     border: 2px solid #1dc071;
   }
@@ -105,96 +105,96 @@
     transition-delay: 0.6s;
   }
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(2) {
-    width: 113.75px;
-    height: 113.75px;
+    width: 74.29px;
+    height: 74.29px;
     left: 370px;
     top: -39px;
     animation-duration: 12s;
     transition-delay: 0s;
   }
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(3) {
-    width: 98.66px;
-    height: 98.66px;
+    width: 74.29px;
+    height: 74.29px;
     left: 200px;
     top: 190px;
     animation-duration: 11s;
     transition-delay: 0.6s;
   }
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(4) {
-    width: 94.4px;
-    height: 94.4px;
+    width: 74.29px;
+    height: 74.29px;
     left: 355px;
     top: 135px;
     animation-duration: 6s;
     transition-delay: 0.2s;
   }
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(5) {
-    width: 120.03px;
-    height: 120.03px;
+    width: 74.29px;
+    height: 74.29px;
     right: 355px;
     top: -35px;
     animation-duration: 7s;
     transition-delay: 0.7s;
   }
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(6) {
-    width: 99.62px;
-    height: 99.62px;
+    width: 74.29px;
+    height: 74.29px;
     right: 200px;
     top: -70px;
     animation-duration: 5s;
     transition-delay: 0.1s;
   }
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(7) {
-    width: 104.11px;
-    height: 104.11px;
+    width: 74.29px;
+    height: 74.29px;
     right: 366px;
     top: 225px;
     animation-duration: 5s;
     transition-delay: 0.7s;
   }
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(8) {
-    width: 104.11px;
-    height: 104.11px;
+    width: 74.29px;
+    height: 74.29px;
     right: 211px;
     top: 150px;
     animation-duration: 8s;
     transition-delay: 0.4s;
   }
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(9) {
-    width: 78.39px;
-    height: 78.39px;
+    width: 74.29px;
+    height: 74.29px;
     right: 351px;
     top: 120px;
     animation-duration: 8s;
     transition-delay: 0.4s;
   }
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(10) {
-    width: 78.39px;
-    height: 78.39px;
+    width: 74.29px;
+    height: 74.29px;
     right: 251px;
     top: 50px;
     animation-duration: 8s;
     transition-delay: 0.4s;
   }
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(11) {
-    width: 113.75px;
-    height: 113.75px;
+    width: 74.29px;
+    height: 74.29px;
     left: 132px;
     top: -50px;
     animation-duration: 8s;
     transition-delay: 0.4s;
   }
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(12) {
-    width: 78.39px;
-    height: 78.39px;
+    width: 74.29px;
+    height: 74.29px;
     left: 111px;
     top: 100px;
     animation-duration: 8s;
     transition-delay: 0.4s;
   }
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(13) {
-    width: 99.62px;
-    height: 99.62px;
+    width: 74.29px;
+    height: 74.29px;
     right: 91px;
     top: 40px;
     animation-duration: 8s;

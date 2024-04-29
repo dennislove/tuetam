@@ -8,9 +8,9 @@ function Footer() {
       <div className='max-w-[1300px]  lg:m-auto md:mx-10 sm:mx-8 pm:mx-5 relative'>
         <div className=' justify-between mb-10  sm:flex pm:block'>
           <div className=' mx-auto  md:w-[20%] sm:w-[30%] pm:w-full mb-10'> 
-          <img loading='lazy' src={logo} alt="logo-DNS" className='text-white text-xs text-center w-28 h-28 rounded-full'/>
-          <h2 className=' uppercase text-yellow-600 font-oxa text-base'> Đông sơn event</h2>
-          <h2 className='text-sm text-white'>Giới hạn là bầu trời</h2>
+          <img loading='lazy' src={logo} alt="logo-DNS" className='text-white text-xs text-center mx-auto w-28 h-28 rounded-full'/>
+          <h2 className=' uppercase text-yellow-600 font-oxa text-base text-center mt-5'>Trầm Hương Tuệ Tâm</h2>
+          <h2 className='text-sm text-white text-center'>Tinh hoa trầm hương Việt</h2>
           </div>
           <div className=' md:w-[77%] sm:w-[67%] pm:w-full'> 
               <ul className='grid  lg:gap-10 md:gap-8 sm:gap-6 pm:gap-0  md:grid-cols-4 sm:grid-cols-2 pm:grid-cols-1'>
@@ -37,7 +37,7 @@ function Footer() {
                   </div>
                 </li>
                 <li className=' uppercase text-white font-medium text-xl mb-10'>Dịch vụ
-                  <h4 className=' mt-4 text-sm font-light '>MSC MOVING FORWARD WITH VIETNAM</h4>
+                  <h4 className=' mt-4 text-sm font-light '>Quảng Cáo Các Đơn Vị Về Trầm Hương</h4>
                 </li>
                 <li className=' uppercase text-white font-medium text-xl'>Liên hệ ngay
                   <div className='mt-4'> <LinkNow/></div>
@@ -57,7 +57,7 @@ function Footer() {
             
           <div className='text-white'>
             <h2 className=' uppercase font-semibold '>Address</h2>
-            <span>38 đường số 8, Khu Dân Cư Cityland Park Hills, Gò Vấp, Thành Phố Hồ Chí Minh</span>
+            <span>123 Nguyễn Văn Linh, Vĩnh Trung, Hải Châu, Đà Nẵng, Việt Nam</span>
           </div>
             </div>
             <div className='px-4 py-5 bg-yellow-600  flex items-center rounded-md gap-5'>
@@ -77,11 +77,11 @@ function Footer() {
 
           <div className='text-white'>
             <h2 className=' uppercase font-semibold '>Email</h2>
-            <span>dongsonevent@gmail.com</span>
+            <span>tramhuongtuetam@gmail.com</span>
           </div>
             </div>
         </div>
-        <h2 className='text-center font-sm text-white mt-10'>2024 Copyright <span className='text-yellow-600'>Đông Sơn Event</span>. Designed by <span className='text-yellow-600'>dongsonevent</span></h2>
+        <h2 className='text-center font-sm text-white mt-10'>2024 Copyright <span className='text-yellow-600'>Trầm Hương Tuệ Tâm</span>. Designed by <span className='text-yellow-600'>dennistran</span></h2>
       </div>
     </div>
   )

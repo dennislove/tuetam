@@ -3,7 +3,9 @@ import '../Service/style.css'
 import data from "../../assets/data.json"
 
 function Slider() {
+    
     const sliders = data.slider;
+    
     const [currentSlide, setCurrentSlide] = useState(0);
     const [slideDirection, setSlideDirection] = useState("");
     const [transform, setTransform] = useState("")
@@ -84,9 +86,9 @@ function Slider() {
                             key={items.id} 
                             onClick={() => setCurrentSlide(index)}
                         >
-                            <img src={items.image} alt={items.member} loading='lazy'/>
+                            <img src={items.image} alt={items.title} loading='lazy'/>
                             <div className="content">
-                                <div className="title">{items.member}</div>
+                                <div className="title">{items.title}</div>
                             </div>
                         </div>
                     );

@@ -21,6 +21,9 @@ export default {
         oxa: 'SVN-Hemi Head',
         pop: 'Poppins',
       },
+      clipPath: {
+        'custom-polygon': 'polygon(70% 0, 100% 50%, 70% 100%, 0 100%, 0 0)',
+      },
      keyframes:{
       showContent:{
         to:{

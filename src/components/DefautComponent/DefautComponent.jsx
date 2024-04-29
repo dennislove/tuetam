@@ -7,8 +7,10 @@ function DefautComponent({children}) {
 
   return (
     <div className='relative'>
-   <div className=' absolute z-50 w-full'> <HeaderComponent/></div>
-     <div className='pt-10'> {children}</div>
+   <div className=' sticky z-50 w-full'>
+     <HeaderComponent/>
+     </div>
+     <div className=''> {children}</div>
      <div className=' absolute'>
         <ScrollToTop/>
       </div>

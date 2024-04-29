@@ -16,12 +16,13 @@
     height: 100%;
     object-fit: cover;
 }
+
 .carousel .list .item .content{
     position: absolute;
-    
     width: 1140px;
     max-width: 80%;
     left: 50%;
+    top: 10%;
     transform: translateX(-50%);
     padding-right: 30%;
     box-sizing: border-box;
@@ -30,6 +31,7 @@
 }
 .carousel .list .item .author{
     font-weight: bold;
+    color: #f1683a;
     letter-spacing: 10px;
 }
 
@@ -41,12 +43,16 @@
 .carousel .list .item .topic{
     color: #f1683a;
 }
+
+.carousel .list .item .topic:nth-child(2){
+    color: #ff5900;
+}
 .thumbnail{
     position: absolute;
     bottom: 50px;
-    left: 50%;
+    left: 49%;
     width: max-content;
-    z-index: 100;
+    z-index: 10;
     display: flex;
     gap: 20px;
 }
@@ -67,11 +73,14 @@
     border-radius: 20px;
 }
 .thumbnail .item .content{
+    background: #CA8A04;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 100%;
     color: #fff;
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
+    border-radius: 0px 0px 20px 20px;
+    bottom: 0px;
 }
 
 .thumbnail .item .content .description{
@@ -82,7 +91,7 @@
     position: absolute;
     top: 80%;
     right: 52%;
-    z-index: 100;
+    z-index: 10;
     width: 300px;
     max-width: 30%;
     display: flex;
@@ -93,16 +102,17 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #eee4;
+    background-color: #fff;
+    color: #000;
     border: none;
-    color: #fff;
+  
     font-family: monospace;
     font-weight: bold;
     transition: .5s;
 }
 .arrows button:hover{
-    background-color: #fff;
-    color: #000;
+    background-color: #eee4;
+    color: #fff;
 }
 
 /* animation */

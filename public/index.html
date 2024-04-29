@@ -15,29 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oxanium:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=SVN-Hemi+Head:wght@400;700&display=swap" rel="stylesheet">
     <title></title>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const titleMap = {
-          '/': 'Tuệ Tâm',
-          // '/gioi-thieu': 'Giới Thiệu',
-          '/tin-tuc': 'TT | Tin Tức',
-          '/du-an': 'TT | Dự Án',
-          '/san-pham': 'TT | Sản Phẩm',
-          '/lien-he': 'TT | Liên Hệ',
-          '*': '404'
-        };
-
-        const updateTitle = () => {
-          const path = window.location.pathname;
-          const title = titleMap[path] || titleMap['*'];
-          document.title = title;
-        };
-
-        updateTitle();
-
-        window.addEventListener('popstate', updateTitle);
-      });
-    </script>
+    
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -1,97 +1,4 @@
-{
-    "datamember":[
-        {
-            "id":1,
-            "name": "Nguyễn Hữu Ngọ",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Engineer",
-            "location": "Hanoi"
-        },
-        {
-            "id":2,
-            "name": "Person 2",
-            "avatar":"https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Designer",
-            "location": "Ho Chi Minh City"
-        },
-        {
-            "id":3,
-            "name": "Person 3",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Teacher",
-            "location": "Da Nang"
-        },
-        {
-            "id":4,
-            "name": "Person 4",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Developer",
-            "location": "Hai Phong"
-        },
-        {
-            "id":5,
-            "name": "Person 5",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Developer",
-            "location": "Hai Phong"
-        },
-        {
-            "id":6,
-            "name": "Person 6",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Developer",
-            "location": "Hai Phong"
-        },
-        {
-            "id":7,
-            "name": "Person 7",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Developer",
-            "location": "Hai Phong"
-        },
-        {
-            "id":8,
-            "name": "Person 8",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Developer",
-            "location": "Hai Phong"
-        },
-        {
-            "id":9,
-            "name": "Person 9",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Developer",
-            "location": "Hai Phong"
-        },
-        {
-            "id":10,
-            "name": "Person 10",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Developer",
-            "location": "Hai Phong"
-        },
-        {
-            "id":11,
-            "name": "Person 11",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Developer",
-            "location": "Hai Phong"
-        },
-        {
-            "id":12,
-            "name": "Person 12",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Developer",
-            "location": "Hai Phong"
-        },
-        {
-            "id":13,
-            "name": "Person 13",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Developer",
-            "location": "Hai Phong"
-        }
-    ],
+{ 
     "sidebar":[
         {
             "path":"/",
@@ -99,17 +6,22 @@
             "name": "Trang Chủ"
         },
         {
+            "path":"/gioi-thieu",
+            "id": 2,
+            "name": "Giới Thiệu"
+        },
+        {
             "path":"/du-an",
             "id": 3,
             "name": "Dự Án"
         },
         {
-            "path":"/san-pham",
+            "path":"/don-vi",
             "id": 4,
-            "name": "Sản Phẩm"
+            "name": "Đơn Vị"
         },
         {
-            "path":"/tin-tuc",
+            "path":"/News",
             "id": 5,
             "name": "Tin Tức"
         },
@@ -119,113 +31,109 @@
             "name": "Liên Hệ"
         }
     ],
-    "interview":[
-        {
-            "countup": "10",
-            "title": "Năm Kinh Nghiệm",
-            "color": "#ff4220"
-        },
-        {
-            "countup": "600",
-            "title": "Chương Trình",
-            "color": "#3dc5ce"
-        },
-        {
-            "countup": "200",
-            "title": "Khách Hàng",
-            "color": "#ffd231"
-        }
-    ],
     "customer":[
         {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgSrc":"https://annhientramhuong.com/wp-content/uploads/2021/05/logo-tramhuongannhien.png",
             "imgAlt":"thumbs",
+            "path":"https://tramhuongannhien.vn/",
             "id": 1
         },
         {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgSrc":"https://static.ybox.vn/2022/2/2/1645521564530-logo.png",
             "imgAlt":"thumbs",
+            "path":"https://thienmochuong.com/",
             "id": 2
         },
         {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgSrc":"https://lh3.googleusercontent.com/proxy/xW61lbc14RoVIHs3VP6qRW7aKEoMQFSwuNYhr2qOZtKY2qtanGfAHLYmkAEkusBzEJVrhnnNwumJ7ZYM6ig0y8rXXpQoKP8YA5ee0zYnSv81Tc-D6lVvsJYqso_Udi0vuZp2E4CnOAUq_MRHoSKPWw",
             "imgAlt":"thumbs",
+            "path":"https://tramhuongthuanchay.com/",
             "id": 3
         },
         {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgSrc":"https://hoangtram.com.vn/Uploads/Banners/Banner-20200715145430.png",
             "imgAlt":"thumbs",
+            "path":"https://hoangtram.com.vn/",
             "id": 4
         },
         {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgSrc":"https://vatphamtramhuong.vn/wp-content/uploads/2021/06/logo-new-2.png",
             "imgAlt":"thumbs",
+            "path":"https://vatphamtramhuong.vn",
             "id": 5
         },
         {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgSrc":"https://tramhuongkygia.com/wp-content/uploads/2021/07/logo_main_2.png",
             "imgAlt":"thumbs",
+            "path":"https://tramhuongkygia.com",
             "id": 6
         },
         {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgSrc":"https://i0.wp.com/moctramhuong.vn/wp-content/uploads/2021/07/Logo_giua_mthJWR.png?fit=400%2C300&ssl=1",
             "imgAlt":"thumbs",
+            "path":"https://moctramhuong.vn/",
             "id": 7
         },
         {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgSrc":"https://tramhuonghanoi.vn/images/logo.png",
             "imgAlt":"thumbs",
+            "path":"https://tramhuonghanoi.vn",
             "id": 8
         }
 
     ],
     "tourament":[
         { 
-            "title": "Chân Thành",
-            "content": "http://www.grandteambuilding.vn/thumbs/210x460x1/upload/news/pvi-2646.png" 
+            "title": "CHÂN THÀNH",
+            "content": "https://tramhuongthientam.vn/uploads/posts/tram_huong_thi%C3%AAn_t%C3%A2m.jpg?1635499060936" 
         },
         { 
-            "title": "Tạo Giá Trị", 
-            "content": "http://www.grandteambuilding.vn/thumbs/210x460x1/upload/news/pvi-2646.png" 
+            "title": "UY TÍN", 
+            "content": "https://lh4.googleusercontent.com/FGdFjcbESyLfu3nzrRdJnOvDr9ggyRqHW8XlZk49YpPJL_Z2VWLRF-8WuWOXPVG592J91LKcNVbkw095EoTlzjnchaZ4mDDZyhuM-grkKWFROIQiDN6W8gptdlgnwxrCcI9j9gofcWcMDz0I" 
         },
         { 
-            "title": "Tận Tâm", 
-            "content": "http://www.grandteambuilding.vn/thumbs/210x460x1/upload/news/pvi-2646.png" 
+            "title": "TẠO GIÁ TRỊ", 
+            "content": "https://vn-test-11.slatic.net/p/87520f129d574cc8db99282a650d511a.jpg" 
+        }
+        ,
+        { 
+            "title": "TẬN TÂM", 
+            "content": "https://tramhuongannhien.vn/wp-content/uploads/2023/07/nu-tram-huong-sach-tai-ho-chi-minh.jpg" 
         }
     ],
     "imageMedia":[
         {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/460x420x1/upload/photo/msc-20240.jpg",
+            "imgSrc":"https://cuahangnoithat.vn/sites/default/files/tu-van/1/tram-huong.png",
             "imgAlt":"image1",
             "id":1
         },
         {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/460x420x1/upload/photo/msc-20240.jpg",
+            "imgSrc":"https://cdn.tgdd.vn/Files/2022/06/04/1436888/cay-tram-huong-dac-diem-cong-dung-va-y-nghia-trong-doi-song-202206040903580434.jpg",
             "imgAlt":"image2",
             "id":2
         },
         {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/460x420x1/upload/photo/msc-20240.jpg",
+            "imgSrc":"https://quaquehuong.vn/wp-content/uploads/2023/03/Nu-tram-Dana-Tram-huong.jpg",
             "imgAlt":"image3",
             "id":3
         },
         {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/460x420x1/upload/photo/msc-20240.jpg",
+            "imgSrc":"https://hoiquanlacphuc.com/upload/images/z2770274270932_149fb00654d382b040f5fdb96b578500.jpg",
             "imgAlt":"image4",
             "id":4
         },
         {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/460x420x1/upload/photo/msc-20240.jpg",
+            "imgSrc":"https://bizweb.dktcdn.net/thumb/1024x1024/100/426/224/products/vong-8li.jpg?v=1663578347080",
             "imgAlt":"image5",
             "id":5
         },
         {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/460x420x1/upload/photo/msc-20240.jpg",
+            "imgSrc":"https://tramhuonghudo.com/uploads/08-2021/vongtaytho.jpg",
             "imgAlt":"image6",
             "id":6
         },
         {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/460x420x1/upload/photo/msc-20240.jpg",
+            "imgSrc":"https://tramhuonghudo.com/uploads/08-2021/z2680959760748_3643ac60078c5f4c5efb9d8de79036b9-249.jpg",
             "imgAlt":"image7",
             "id":7
         }
@@ -234,7 +142,7 @@
         {
             "imgSrc":"http://www.grandteambuilding.vn/thumbs/230x100x2/upload/news/logo-2-01-6436.png",
             "imgAlt":"tourmember_1",
-            "description":"Nội dung của giá trị cốt lõi"
+            "description":"Cái 'Tâm' làm nên tảng quan trọng trong việc kinh doanh nói chung trong nghề trầm hương nói riêng. Quan niệm rằng 'TÂM' càng rộng, càng vững mạnh vươn càng xa."
         },
         {
             "imgSrc":"http://www.grandteambuilding.vn/thumbs/230x100x2/upload/news/logo-2-01-6436.png",
@@ -245,66 +153,63 @@
             "imgSrc":"http://www.grandteambuilding.vn/thumbs/230x100x2/upload/news/logo-2-01-6436.png",
             "imgAlt":"tourmember_3",
             "description":"Nội dung của giá trị cốt lõi"
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/230x100x2/upload/news/logo-2-01-6436.png",
+            "imgAlt":"tourmember_4",
+            "description":"Nội dung của giá trị cốt lõi"
         }
     ],
     "slider":[
         {
             "id":1,
-            "author":"DNSEVENT",
-            "member":"Vietinbank",
-            "image":"https://github.com/HoanghoDev/slider_1/blob/main/image/img1.jpg?raw=true",
-            "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?"
+            "author":"TUETAM",
+            "member":"",
+            "title":"Thiên Mộc Hương",
+            "image":"https://thienmochuong.com/wp-content/uploads/2023/08/web-mobie.jpg",
+            "description":""
         },
         {
             "id":2,
-            "author":"DNSEVENT",
-            "member":"Lê Gia",
-            "image":"https://github.com/HoanghoDev/slider_1/blob/main/image/img2.jpg?raw=true",
-            "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?"
+            "author":"TUETAM",
+            "member":"VEGAN",
+            "title":"VEGAN",
+            "image":"https://tramhuongthuanchay.com/images/cua-hang-vegan-tram-huong.jpg",
+            "description":"Vegan là thương hiệu Trầm Hương sử dụng những ưu đãi tự nhiên nhiệt đới Việt Nam trong lành với thiên nhiên phát triển da dạng. Ngay từ khi thành lập cho đến nay, VEGAN Trầm Hương Thuần Chay luôn cố gắng mang đến cho người dùng những sản phẩm có chất lượng tốt nhất và đang càng ngày khẳng định được vị thế trong lòng người tiêu dùng, được nhiều khách hàng đánh giá là một trong những dòng Trầm Hương chất lượng trên thị trường hiện nay."
         },
         {
             "id":3,
-            "author":"DNSEVENT",
-            "member":"Vietcombank",
-            "image":"https://github.com/HoanghoDev/slider_1/blob/main/image/img3.jpg?raw=true",
-            "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?"
+            "author":"TUETAM",
+            "member":"Trầm Hương Thiên Tâm",
+            "title":"Trầm Hương Thiên Tâm",
+            "image":"https://tramhuongthientamhn.com/wp-content/uploads/2021/12/tram-huong-uy-tin-ha-noi-1-scaled.jpg",
+            "description":""
         },
         {
             "id":4,
-            "author":"DNSEVENT",
-            "member":"THPT Chuyên Lam Sơn",
-            "image":"https://github.com/HoanghoDev/slider_1/blob/main/image/img4.jpg?raw=true",
-            "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?"
+            "author":"TUETAM",
+            "member":"",
+            "title":"Trầm Hương An Nhiên",
+            "image":"https://tramhuongannhien.vn/wp-content/uploads/2023/09/tram-huong-an-nhien-chuyen-cung-cap-cac-san-pham-tram-huong.jpg",
+            "description":""
         }
-    ],
-    "news" :[
+    ],   
+    "major":[
         {
-            "id":1,
-            "title":"Ý nghĩa - Những giá trị đọng lại của ngày Họp lớp - Hội khoá đã được nhà đài TTV khắc hoạ sinh động, chân thực !",
-            "imageSrc": "https://github.com/HoanghoDev/slider_1/blob/main/image/img1.jpg?raw=true",
-            "imageAlt":"",
-            "path":"https://www.facebook.com/watch/?v=702685938346723"
+            "title":"Tiếp thị nội dung và SEO",
+            "description":"Phát triển nội dung chuyên sâu về trầm hương, bao gồm bài viết, blog và video để cải thiện vị trí tìm kiếm trên internet và cung cấp thông tin giá trị cho khách hàng",
+            "path":""
         },
         {
-            "id":2,
-            "title":"Những người trẻ tâm huyết với lịch sử, văn hóa truyền thống",
-            "imageSrc": "https://github.com/HoanghoDev/slider_1/blob/main/image/img1.jpg?raw=true",
-            "imageAlt":"",
-            "path":"https://baothanhhoa.vn/dat-va-nguoi/nhung-nguoi-tre-tam-huyet-voi-lich-su-van-hoa-truyen-thong/200624.htm"
+            "title":"Sự kiện và triển lãm",
+            "description":"Tham gia hoặc tổ chức các sự kiện và triển lãm chuyên ngành để giới thiệu sản phẩm trầm hương đến với các nhà bán lẻ, đối tác tiềm năng và khách hàng.",
+            "path":""
         },
         {
-            "id":3,
-            "title":"TEAM BUILDING TRẢI NGHIỆM LỊCH SỬ 2023",
-            "imageSrc": "https://github.com/HoanghoDev/slider_1/blob/main/image/img1.jpg?raw=true",
-            "imageAlt":"",
-            "path":"https://www.facebook.com/watch/?v=1829891707373233"
-        },
-        {
-            "id":4,
-            "title":"Truyền Hình TX NGHI SƠN đã đưa tin về những hoạt động của CTY CP SỰ KIỆN VÀ DU LỊCH ĐÔNG SƠN",
-            "imageSrc": "https://drive.google.com/file/d/1lh5yo4O1qdSeU0uur_HxZt2TqwpjEWW_/view?usp=sharing",
-            "imageAlt":"",
-            "path":"https://www.facebook.com/watch/?v=229200386521646"
+            "title":"Hợp tác và đại sứ thương hiệu",
+            "description":"Hợp tác với những người có ảnh hưởng trong ngành như chuyên gia phong thủy, nhà thiền, hoặc các nhân vật nổi tiếng để mở rộng độ phủ sóng thương hiệu và tăng tính thuyết phục cho sản phẩm.",
+            "path":""
         }
     ]
+
 }
