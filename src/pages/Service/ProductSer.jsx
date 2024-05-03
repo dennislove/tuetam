@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '../../components/Footer/Footer'
 import Slider from './Slider'
-import VideoClip from '../../components/Video/VideoClip'
+import VideoClipComponent from '../../components/Video/VideoClipComponent'
 import Media from '../../components/Video/Media'
 
 function ProductSer() {
@@ -19,7 +19,7 @@ function ProductSer() {
 
             <div className='mt-10 mb-5 text-center font-oxa'>
             <h2 className='  font-normal text-[40px] text-white capitalize'>Video Clip</h2>
-              <VideoClip/>
+              <VideoClipComponent/>
        
             </div>
 

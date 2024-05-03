@@ -85,14 +85,17 @@ function NewsComponent() {
       ))} 
    
    </div>
+  
    <div id='viewMoreBtn'
          onClick={handleViewToggle}
-   className=" mt-10 lg:px-8 md:px-6 lg:py-4 md:py-2 pm:px-6 pm:py-2 border-2 border-yellow-600 font-semibold text-yellow-600 rounded-lg transition-all 
-                  duration-1000 ease-in-out inline-block overflow-hidden relative capitalize shadow-md hover:bg-yellow-600 hover:text-white
+   className=" cursor-pointer mt-10 lg:px-8 md:px-6 lg:py-4 md:py-2 pm:px-6 pm:py-2 border-2
+               border-yellow-600 font-semibold text-white rounded-lg transition-all bg-yellow-600  hover:bg-transparent
+                  duration-1000 ease-in-out inline-block overflow-hidden relative capitalize shadow-md hover:text-yellow-600
                   before:absolute before:-left-[100%] hover:before:left-full before:top-0 before:w-full before:h-full
-              before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:transition-all before:duration-500 before:ease-linear">
-               <h2>{visibleItems === total ? 'View Less' : 'View More'}</h2>
-              </div>
+              before:bg-gradient-to-r before:from-transparent before:via-yellow-600 
+              before:to-transparent before:transition-all before:duration-500 before:ease-linear">
+               <h2>{visibleItems === total ? 'Ẩn Bớt' : 'Xem Thêm'}</h2>
+    </div>
    </div>
   )
 }

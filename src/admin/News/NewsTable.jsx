@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { getDatabase, ref, child, get, set, remove  } from "firebase/database";
 import FormAddNews from './FormAddNews';
 
-
 function NewsTable() {
 
   const [showForm, setShowForm] = useState(false); // useState hook để lưu trữ trạng thái hiển thị (mặc định là false)
@@ -22,6 +21,7 @@ function NewsTable() {
 
   // select database
   const [news, setNews] = useState([]);
+  const [filteredNews, setFilteredNews] = useState([]);
   useEffect(() => {
     const dbRef = ref(getDatabase());
 
@@ -44,6 +44,13 @@ function NewsTable() {
       });
   }, []);
 
+  useEffect(() => {
+    // Lọc news dựa trên giá trị tìm kiếm title
+    const results = news.filter(item =>
+      item.title.toLowerCase().includes(query) 
+    );
+    setFilteredNews(results);
+  }, [query, news]); 
 
   const handleEditNews = (newsId) => {
     const item = news.find(item => item.id === newsId);
@@ -111,7 +118,7 @@ function NewsTable() {
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="py-3 px-6">
-                  Rank
+                  #
                 </th>
                 <th scope="col" className="py-3 px-6">
                   Title
@@ -129,7 +136,7 @@ function NewsTable() {
             </thead>
             <tbody>
               {/* Example row */}
-              {news.slice(0, -1).map((item, index) => (
+              {filteredNews.map((item, index) => (
               <tr key={index+1} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td className="py-4 px-6">
                  {index+1}

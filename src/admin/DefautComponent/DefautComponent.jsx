@@ -3,6 +3,7 @@ import NewsTable from '../News/NewsTable'
 import HeaderComponent from './HeaderComponent'
 import Dashboard from './Dashboard'
 import FooterComponent from '../Footer/FooterComponent'
+import MediaTable from '../Media/MediaTable'
 
 function DefautComponent() {
   return (
@@ -10,9 +11,11 @@ function DefautComponent() {
         <Dashboard/>
         <div className='p-4 ml-80 w-full'>
             <HeaderComponent/>
-
-            <div>
+            <div className='border-b-4'>
                 <NewsTable/>
+            </div>
+            <div>
+              <MediaTable/>
             </div>
         <FooterComponent/>
         </div>

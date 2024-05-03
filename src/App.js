@@ -4,7 +4,7 @@ import {routes} from './routes'
 import DefautComponent from './components/DefautComponent/DefautComponent';
 import 'firebase/database';  // Nếu dùng Realtime Database
 import 'firebase/storage'; 
-import { getDatabase, ref,get, set, push, serverTimestamp } from 'firebase/database';
+import { getDatabase, ref,get, orderByChild, equalTo, set, push, serverTimestamp } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
 
@@ -63,7 +63,7 @@ function App() {
    </Router>
   );
 }
-export { database, storage, ref, set,get, push, storageRef, uploadBytes, getDownloadURL, serverTimestamp };
+export { database, storage, ref, set,get, push, storageRef, orderByChild, equalTo, uploadBytes, getDownloadURL, serverTimestamp };
 // Trong file App.js, sửa dòng export cho auth
 export const auth = getAuth(app);
 
