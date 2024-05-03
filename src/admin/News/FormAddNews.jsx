@@ -80,9 +80,9 @@ const handleDeleteDescription = () => {
     const imageUrl = await getDownloadURL(snapshot.ref);
 
     // Lấy giá trị counter hiện tại và tính ID tiếp theo
-  const counterRef = ref(database, 'News/counter');
-  const counterSnapshot = await get(counterRef);
-  const nextId = (counterSnapshot.exists() ? counterSnapshot.val() : 0) + 1;
+  // const counterRef = ref(database, 'News/counter');
+  // const counterSnapshot = await get(counterRef);
+  // const nextId = (counterSnapshot.exists() ? counterSnapshot.val() : 0) + 1;
 
     const newsRef = push(ref(database, 'News'));
     set(newsRef, {
@@ -97,7 +97,7 @@ const handleDeleteDescription = () => {
       createdAt: serverTimestamp()
     //   image: image
     }).then(() => {
-        set(counterRef, nextId);
+        // set(counterRef, nextId);
       alert('Data uploaded successfully!');
     }).catch((error) => {
       alert('Failed to upload data:', error);
