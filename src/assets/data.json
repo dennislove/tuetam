@@ -11,9 +11,9 @@
             "name": "Giới Thiệu"
         },
         {
-            "path":"/du-an",
+            "path":"/dich-vu",
             "id": 3,
-            "name": "Dự Án"
+            "name": "Dịch Vụ"
         },
         {
             "path":"/don-vi",

@@ -9,9 +9,11 @@ const PageTitleManager = () => {
     '/gioi-thieu': 'TT | Giới Thiệu',
     '/News': 'TT | Tin Tức',
     '/News/:slug': 'TT | Tin Tức', // Đường dẫn này sử dụng tham số
-    '/du-an': 'TT | Dự Án',
+    '/dich-vu': 'TT | Dịch Vụ',
     '/don-vi': 'TT | Đơn Vị',
     '/lien-he': 'TT | Liên Hệ',
+    '/sign-in': 'TT | Đăng Nhập',
+    '/sign-up': 'TT | Đăng Ký',
     '/admin/api/news': 'Admin || Tuệ Tâm',
     '/admin/api/signin': 'Admin || Login',
     // Không định nghĩa '*' tại đây

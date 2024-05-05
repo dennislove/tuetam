@@ -12,6 +12,9 @@ import DetailNewsPage from "../pages/News/DetailNewsPage";
 import SignIn from "../admin/Account/SignIn";
 import SignUp from "../admin/Account/SignUp";
 import { withAuthProtected } from "../admin/Account/ProtectedAuth";
+import SignInClient from "../components/auth/sign-in";
+import SignUpClient from "../components/auth/sign-up";
+import Payment from "../components/Payment/Payment";
 
 export const routes = [
     {
@@ -27,7 +30,7 @@ export const routes = [
         
     },
     {
-        path:'/du-an',
+        path:'/dich-vu',
         element:Project,
         isShowHeader: true,
         
@@ -56,6 +59,19 @@ export const routes = [
         isShowHeader: true,
         
     },
+    {
+        path:'/sign-in',
+        element:SignInClient,
+        isShowHeader: true,
+        
+    },
+    {
+        path:'/sign-up',
+        element:SignUpClient,
+        isShowHeader: true,
+        
+    },
+    
     {
         path:'*',
         title: "404",
