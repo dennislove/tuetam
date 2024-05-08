@@ -5,6 +5,7 @@ import data from '../../assets/data.json'
 import clsx from 'clsx';
 
 import { match } from 'path-to-regexp';  // Import match from path-to-regexp
+import ButtonOutLine from '../Button/ButtonOutLine';
 
 const NavItem = ({ children, href, id }) => {
   const location = useLocation();
@@ -67,7 +68,7 @@ function NavbarHeader() {
                   duration-1000 ease-in-out inline-block overflow-hidden relative capitalize shadow-md hover:bg-yellow-600 hover:text-white
                   before:absolute before:-left-[100%] hover:before:left-full before:top-0 before:w-full before:h-full
               before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:transition-all before:duration-500 before:ease-linear">
-              BOOKING
+              ĐẶT NGAY
               </Link>
           </div>
           </section>
@@ -90,18 +91,13 @@ function NavbarHeader() {
               <ul className='mt-2'>
             {headerList.map(item =>(
                          <li key={item.id} className=' w-full  uppercase cursor-pointer'>
-                            <a  href={item.path} className=' items-center py-3 block border-b border-[#f2f2f2]'>{item.name}</a>
-                            {/* <div className='bg-[#f2f2f2] h-[1px] w-full mt-2'></div> */}
+                            <Link  to={item.path} className=' items-center py-3 block border-b border-[#f2f2f2]'>{item.name}</Link>
+                          
                           </li>
                  ))}
             </ul>
             <div className=' mt-5' >
-                  <button className=" lg:px-8 md:px-6  lg:py-4 md:py-2 pm:px-6 pm:py-2 border-2 border-yellow-600 font-semibold text-yellow-600 rounded-lg transition-all 
-                      duration-1000 ease-in-out inline-block overflow-hidden relative capitalize shadow-md hover:bg-yellow-600 hover:text-white
-                      before:absolute before:-left-[100%] hover:before:left-full before:top-0 before:w-full before:h-full
-                  before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:transition-all before:duration-500 before:ease-linear">
-                  PROFILE
-                  </button>
+                <ButtonOutLine name="ĐẶT NGAY"/>
               </div>
             </section>
           </div>

@@ -5,7 +5,7 @@ import DefautComponent from './components/DefautComponent/DefautComponent';
 import 'firebase/database';  // Nếu dùng Realtime Database
 import 'firebase/storage'; 
 import { getDatabase, ref,get, orderByChild, equalTo, set, push, serverTimestamp } from 'firebase/database';
-import { getAuth } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, TwitterAuthProvider } from 'firebase/auth';
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 // Import the functions you need from the SDKs you need
@@ -36,6 +36,10 @@ const analytics = getAnalytics(app);
 const database = getDatabase(app);
 const storage = getStorage(app);
 
+const auth = getAuth(app)
+const googleProvider = new GoogleAuthProvider();
+const twitterProvider = new TwitterAuthProvider();
+
 function App() {
   return (
     <Router>
@@ -65,6 +69,6 @@ function App() {
 }
 export { database, storage, ref, set,get, push, storageRef, orderByChild, equalTo, uploadBytes, getDownloadURL, serverTimestamp };
 // Trong file App.js, sửa dòng export cho auth
-export const auth = getAuth(app);
+export { auth, googleProvider, twitterProvider };
 
 export default App;

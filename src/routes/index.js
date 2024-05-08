@@ -14,7 +14,8 @@ import SignUp from "../admin/Account/SignUp";
 import { withAuthProtected } from "../admin/Account/ProtectedAuth";
 import SignInClient from "../components/auth/sign-in";
 import SignUpClient from "../components/auth/sign-up";
-import Payment from "../components/Payment/Payment";
+import PayBill from "../components/Payment/PayBill";
+import FormAds from "../components/Form/FormAds";
 
 export const routes = [
     {
@@ -26,6 +27,12 @@ export const routes = [
     {
         path:'/gioi-thieu',
         element:InterViewCT,
+        isShowHeader: true,
+        
+    },
+    {
+        path:'/dich-vu/ads',
+        element:FormAds,
         isShowHeader: true,
         
     },
@@ -59,6 +66,7 @@ export const routes = [
         isShowHeader: true,
         
     },
+   
     {
         path:'/sign-in',
         element:SignInClient,
@@ -68,10 +76,16 @@ export const routes = [
     {
         path:'/sign-up',
         element:SignUpClient,
+        // element:SignUp,
         isShowHeader: true,
         
     },
-    
+    {
+        path:'/dich-vu/payment',
+        element:PayBill,
+        isShowHeader: true,
+        
+    },
     {
         path:'*',
         title: "404",

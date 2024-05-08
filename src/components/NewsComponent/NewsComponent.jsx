@@ -2,10 +2,17 @@ import React, { useEffect, useState } from 'react'
 // import { useNavigate } from 'react-router-dom'
 import { getDatabase, ref, child, get } from "firebase/database";
 import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
 
 function NewsComponent() {
 
     const [news, setNews] = useState([])
+    const [filteredNews, setFilteredNews] = useState([]);
+    const [query, setQuery] = useState('');
+
+    const handleSearchChange = (event) => {
+      setQuery(event.target.value.toLowerCase());
+    };
     // const navigate = useNavigate(); 
     useEffect(() => {
       const dbRef = ref(getDatabase());
@@ -29,6 +36,14 @@ function NewsComponent() {
           console.error(error);
         });
   }, []);
+
+  useEffect(() => {
+    // Filter news based on the query
+    const results = news.filter(newsItem =>
+        (newsItem.title && newsItem.title.toLowerCase().includes(query)) 
+    );
+    setFilteredNews(results);
+}, [query, news]);
 
 //---------show more - show less --------
   const total =news.length;
@@ -69,8 +84,23 @@ function NewsComponent() {
   };
   return (
    <div>
+      <div className="relative my-4 flex items-center">
+        <input
+          type="text"
+          value={query} onChange={handleSearchChange}
+          placeholder="Tìm kiếm tin tức..."
+          className="w-full p-3 border-none focus:outline-none rounded-l text-gray-700 "
+        />
+      <div className='py-3 px-10 bg-yellow-600 text-white rounded-r'>
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 ">
+          <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </svg>
+      </div>
+
+      </div>
+
       <div className='grid md:grid-cols-3 sm:grid-cols-2 pm:grid-cols-1 gap-5'>
-        {news.slice(0, visibleItems).map((item, index) => (
+        {filteredNews.slice(0, visibleItems).map((item, index) => (
       <Link  to={`/News/${item.slug}`} data-id={item.id} className='group rounded-lg bg-white overflow-hidden relative' key={index}>
         <img loading='lazy' src={item.image} alt="" className='rounded-lg group-hover:scale-125 duration-300 
         transform ease-out '/>
@@ -86,16 +116,9 @@ function NewsComponent() {
    
    </div>
   
-   <div id='viewMoreBtn'
-         onClick={handleViewToggle}
-   className=" cursor-pointer mt-10 lg:px-8 md:px-6 lg:py-4 md:py-2 pm:px-6 pm:py-2 border-2
-               border-yellow-600 font-semibold text-white rounded-lg transition-all bg-yellow-600  hover:bg-transparent
-                  duration-1000 ease-in-out inline-block overflow-hidden relative capitalize shadow-md hover:text-yellow-600
-                  before:absolute before:-left-[100%] hover:before:left-full before:top-0 before:w-full before:h-full
-              before:bg-gradient-to-r before:from-transparent before:via-yellow-600 
-              before:to-transparent before:transition-all before:duration-500 before:ease-linear">
-               <h2>{visibleItems === total ? 'Ẩn Bớt' : 'Xem Thêm'}</h2>
-    </div>
+ <div className='mt-10'>
+    <Button onClick={handleViewToggle} name={visibleItems === total ? 'Ẩn Bớt' : 'Xem Thêm'}/>
+ </div>
    </div>
   )
 }

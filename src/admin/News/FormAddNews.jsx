@@ -136,9 +136,9 @@ const handleDeleteDescription = () => {
                     />
                 ))}
                 <div className='flex gap-3'>
-                  <button type='button' className=' bg-[#6366f1] text-white px-3 py-2 rounded-lg ' onClick={handleAddDescription}>Nhập thêm</button>
+                  <button type='button' className=' bg-[#6366f1] text-white px-3 py-2 rounded-lg ' onClick={handleAddDescription}>Add</button>
                   {descriptions.length > 1 && (
-                    <button type="button" className='border border-[#6366f1] text-[#6366f1] px-3 py-2 rounded-lg' onClick={handleDeleteDescription}>Xóa bớt</button>
+                    <button type="button" className='border border-[#6366f1] text-[#6366f1] px-3 py-2 rounded-lg' onClick={handleDeleteDescription}>Delete</button>
                   )}
                 </div>
                 <input

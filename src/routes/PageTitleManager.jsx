@@ -10,6 +10,8 @@ const PageTitleManager = () => {
     '/News': 'TT | Tin Tức',
     '/News/:slug': 'TT | Tin Tức', // Đường dẫn này sử dụng tham số
     '/dich-vu': 'TT | Dịch Vụ',
+    '/dich-vu/payment': 'TT | Thanh Toán',
+    '/dich-vu/ads': 'TT | Quảng Cáo',
     '/don-vi': 'TT | Đơn Vị',
     '/lien-he': 'TT | Liên Hệ',
     '/sign-in': 'TT | Đăng Nhập',
@@ -25,7 +27,7 @@ const PageTitleManager = () => {
 
       // Kiểm tra xem có khớp với bất kỳ đường dẫn nào trong titleMap không
       for (let path in titleMap) {
-        const matcher = match(path, { decode: decodeURIComponent, end: path === '/News/:slug' ? false : true });
+        const matcher = match(path, { decode: decodeURIComponent, end: path === '/dich-vu/ads' || '/dich-vu/payment'|| '/News/:slug' ? false : true });
         if (matcher(location.pathname)) {
           title = titleMap[path];
           break;

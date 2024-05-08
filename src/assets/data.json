@@ -35,52 +35,106 @@
         {
             "imgSrc":"https://annhientramhuong.com/wp-content/uploads/2021/05/logo-tramhuongannhien.png",
             "imgAlt":"thumbs",
+            "company":"An Nhiên Trầm Hương",
+            "location":"Đà Nẵng",
+            "jobs":"Nhân viên bán hàng",
             "path":"https://tramhuongannhien.vn/",
             "id": 1
         },
         {
             "imgSrc":"https://static.ybox.vn/2022/2/2/1645521564530-logo.png",
             "imgAlt":"thumbs",
+            "company":"Thiên Mộc Hương",
+            "location":"Đà Nẵng",
+            "jobs":"Nhân viên Marketing",
             "path":"https://thienmochuong.com/",
             "id": 2
         },
         {
             "imgSrc":"https://lh3.googleusercontent.com/proxy/xW61lbc14RoVIHs3VP6qRW7aKEoMQFSwuNYhr2qOZtKY2qtanGfAHLYmkAEkusBzEJVrhnnNwumJ7ZYM6ig0y8rXXpQoKP8YA5ee0zYnSv81Tc-D6lVvsJYqso_Udi0vuZp2E4CnOAUq_MRHoSKPWw",
             "imgAlt":"thumbs",
+            "company":"Trầm Hương Thuần Chay",
+            "location":"Hà Nội",
+            "jobs":"Nhân viên chế tạo",
             "path":"https://tramhuongthuanchay.com/",
             "id": 3
         },
         {
             "imgSrc":"https://hoangtram.com.vn/Uploads/Banners/Banner-20200715145430.png",
             "imgAlt":"thumbs",
+            "company":"Hoàng Trầm",
+            "location":"Hà Nội",
+            "jobs":"Nhân viên sản xuất",
             "path":"https://hoangtram.com.vn/",
             "id": 4
         },
         {
             "imgSrc":"https://vatphamtramhuong.vn/wp-content/uploads/2021/06/logo-new-2.png",
             "imgAlt":"thumbs",
+            "company":"Vật Phẩm Trầm Hương",
+            "location":"Hà Nội",
+            "jobs":"Nhân viên Marketing",
             "path":"https://vatphamtramhuong.vn",
             "id": 5
         },
         {
             "imgSrc":"https://tramhuongkygia.com/wp-content/uploads/2021/07/logo_main_2.png",
             "imgAlt":"thumbs",
+            "company":"Trầm Hương Kỳ Gia",
+            "location":"TP.HCM",
+            "jobs":"Nhân viên sản xuất",
             "path":"https://tramhuongkygia.com",
             "id": 6
         },
         {
             "imgSrc":"https://i0.wp.com/moctramhuong.vn/wp-content/uploads/2021/07/Logo_giua_mthJWR.png?fit=400%2C300&ssl=1",
             "imgAlt":"thumbs",
+            "company":"Mộc Trầm Hương",
+            "location":"Đà Nẵng",
+            "jobs":"Nhân viên điều chế",
             "path":"https://moctramhuong.vn/",
             "id": 7
         },
         {
             "imgSrc":"https://tramhuonghanoi.vn/images/logo.png",
             "imgAlt":"thumbs",
+            "company":"Trầm Hương hà Nội",
+            "location":"Hà Nội",
+            "jobs":"Nhân viên đóng gói",
             "path":"https://tramhuonghanoi.vn",
             "id": 8
         }
 
+    ],
+    "job":[
+        {
+            "quantity":130,
+            "jobs":"Nhân viên bán hàng"
+        },
+        {
+            "quantity":200,
+            "jobs":"Nhân viên chế tạo"
+        },
+        {
+            "quantity":120,
+            "jobs":"Nhân viên Marketing"
+        },
+        {
+            "quantity":230,
+            "jobs":"Nhân viên sản xuất"
+        },
+        {
+            "quantity":170,
+            "jobs":"Nhân viên điều chế"
+        },
+        {
+            "quantity":354,
+            "jobs":"Nhân viên đóng gói"
+        },
+        {
+            "quantity":260,
+            "jobs":"Nhân viên kiểm kho"
+        }
     ],
     "tourament":[
         { 
@@ -211,5 +265,4 @@
             "path":""
         }
     ]
-
 }

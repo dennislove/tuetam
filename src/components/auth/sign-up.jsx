@@ -5,13 +5,42 @@ import {
   Button,
   Typography,
 } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
-
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { getAuth,createUserWithEmailAndPassword } from 'firebase/auth';
 import image from '../../images/pattern.png'
 import twitter from '../../images/twitter-logo.svg'
 import Footer from "../Footer/Footer";
 
 export function SignUpClient() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const navigate = useNavigate();
+  const auth = getAuth();
+
+  const handleSignUp  = (event) => {
+    event.preventDefault(); // Ngăn không cho form thực hiện hành động mặc định của nó (gửi dữ liệu form)
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+    try {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Đăng nhập thành công, userCredential.user chứa thông tin người dùng
+        navigate('/sign-in'); // Chuyển hướng người dùng đến trang yêu cầu sau khi đăng nhập thành công
+      })
+      .catch((error) => {
+        // Xử lý các lỗi xuất hiện, ví dụ như email không hợp lệ hoặc mật khẩu sai
+        alert('Đăng ký thất bại: ' + error.message);
+      });
+} catch (error) {
+    setError(error.message);
+  }
+};
   return (
     <div>
       <section className="m-8 flex">
@@ -26,31 +55,37 @@ export function SignUpClient() {
             <Typography variant="h2" className="font-bold mb-4">Tham Gia Ngay</Typography>
             <Typography variant="paragraph" color="blue-gray" className="text-lg font-normal">Vui lòng điền thông tin để đăng ký.</Typography>
           </div>
-          <form className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
+
+          <form onSubmit={handleSignUp} className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
           <div className="mb-1 flex flex-col gap-6">
-              <label variant="small" color="blue-gray" className="-mb-3 font-medium">
+              <label htmlFor="email" color="blue-gray" className="-mb-3 font-medium">
                 Email
               </label>
               <input
+              type="email" id="email" name="email" required
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
                 placeholder="name@mail.com"
                 className=" border p-3 rounded-lg focus:!border-t-gray-900"
                
               />
-              <label variant="small" color="blue-gray" className="-mb-3 font-medium">
+              <label htmlFor="password" color="blue-gray" className="-mb-3 font-medium">
                 Mật khẩu
               </label>
               <input
-                type="password"
-               
+                type="password" id="password" name="password" required
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
                 placeholder="********"
                 className=" border p-3 rounded-lg focus:!border-t-gray-900"
               />
-              <label variant="small" color="blue-gray" className="-mb-3 font-medium">
+              <label htmlFor="password" color="blue-gray" className="-mb-3 font-medium">
                 Xác nhận mật khẩu
               </label>
               <input
-                type="password"
-               
+                type="password"  name="confirmpassword" required
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="********"
                 className=" border p-3 rounded-lg focus:!border-t-gray-900"
               />
@@ -74,10 +109,10 @@ export function SignUpClient() {
                     </a>
                   </Typography>
            </div>
-            <Button className="mt-6 bg-black" fullWidth>
+            <Button type="submit" className="mt-6 bg-black" fullWidth >
               Đăng Ký Ngay
             </Button>
-  
+            {error && <p className="text-red-500">{error}</p>}
             <div className="space-y-4 mt-8">
               <Button size="lg" color="white" className="flex items-center gap-2 justify-center shadow-md py-4" fullWidth>
                 <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">

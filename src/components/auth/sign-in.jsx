@@ -5,42 +5,82 @@ import {
   Button,
   Typography,
 } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
+import React, { useState } from 'react';
+import { getAuth, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { auth, googleProvider, twitterProvider } from '../../App.js';
 
 import image from '../../images/pattern.png'
 import twitter from '../../images/twitter-logo.svg'
 import Footer from "../Footer/Footer";
-export function SignInClient() {
+
+function signInWithGoogle() {
+
+  signInWithPopup(auth, googleProvider)
+    .then((result) => {
+      // Đăng nhập thành công, có thể lấy thông tin người dùng từ result.user
+      //  navigate('/', { replace: true }); 
+      console.log(result.user);
+    })
+    .catch((error) => {
+      // Xử lý các lỗi ở đây
+      console.error(error);
+    });
+}
+
+
+export function SignInClient({ auth }) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  // const auth = getAuth();
+
+  const handleSignIn = (event) => {
+    event.preventDefault(); // Ngăn không cho form thực hiện hành động mặc định của nó (gửi dữ liệu form)
+    
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Đăng nhập thành công, userCredential.user chứa thông tin người dùng
+        navigate('/', { replace: true }); // Chuyển hướng người dùng đến trang yêu cầu sau khi đăng nhập thành công
+      })
+      .catch((error) => {
+        // Xử lý các lỗi xuất hiện, ví dụ như email không hợp lệ hoặc mật khẩu sai
+        alert('Đăng nhập thất bại: ' + error.message);
+      });
+  };
   return (
    <div>
       <section className="m-8 flex gap-4">
-        <form className="w-full lg:w-3/5 mt-24">
+        <form className="w-full lg:w-3/5 mt-24" >
           <div className="text-center">
             <h2 variant="h2" className="font-bold mb-4 text-4xl">Đăng Nhập</h2>
             <h2 variant="paragraph" color="blue-gray" className="text-lg font-normal">Vui lòng nhập email và mật khẩu.</h2>
           </div>
-          <form className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
+          <form className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2" onSubmit={handleSignIn}>
             <div className="mb-1 flex flex-col gap-6">
-              <label variant="small" color="blue-gray" className="-mb-3 font-medium">
+              <label htmlFor="email" color="blue-gray" className="-mb-3 font-medium">
                 Email
               </label>
               <input
+              type="email" id="email" name="email" required
                 placeholder="name@mail.com"
                 className=" border p-3 rounded-lg focus:!border-t-gray-900"
-               
+                value={email}
+              onChange={(e) => setEmail(e.target.value)}
               />
-              <label variant="small" color="blue-gray" className="-mb-3 font-medium">
+              <label htmlFor="password" color="blue-gray" className="-mb-3 font-medium">
                 Mật khẩu
               </label>
               <input
-                type="password"
-               
+                type="password" id="password" name="password" required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="********"
                 className=" border p-3 rounded-lg focus:!border-t-gray-900"
               />
             </div>
             
-            <Button className="mt-6 bg-black" fullWidth>
+            <Button className="mt-6 bg-black" fullWidth type="submit">
               Đăng Nhập
             </Button>
   
@@ -67,7 +107,7 @@ export function SignInClient() {
             </form>
            <div className="w-full lg:w-3/5 mt-24 mx-auto">
               <div className="space-y-4 mt-8">
-                <Button size="lg" color="white" className="flex items-center gap-2 justify-center shadow-md py-4" fullWidth>
+                <Button onClick={signInWithGoogle} size="lg" color="white" className="flex items-center gap-2 justify-center shadow-md py-4" fullWidth>
                   <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clipPath="url(#clip0_1156_824)">
                       <path d="M16.3442 8.18429C16.3442 7.64047 16.3001 7.09371 16.206 6.55872H8.66016V9.63937H12.9813C12.802 10.6329 12.2258 11.5119 11.3822 12.0704V14.0693H13.9602C15.4741 12.6759 16.3442 10.6182 16.3442 8.18429Z" fill="#4285F4" />
@@ -83,6 +123,7 @@ export function SignInClient() {
                   </svg>
                   <span>Đăng nhập bằng Google</span>
                 </Button>
+
                 <Button size="lg" color="white" className="flex items-center gap-2 justify-center shadow-md py-4" fullWidth>
                   <img src={twitter} height={24} width={24} alt="" />
                   <span>Đăng nhập bằng Twitter</span>
@@ -93,8 +134,7 @@ export function SignInClient() {
               Bạn chưa có tài khoản?
               <Link to="/sign-up" className="text-gray-900 ml-1 underline">Tạo ngay</Link>
             </h3>
-          
-  
+        
         </form>
         <div className="w-2/5 h-full hidden lg:block">
           <img

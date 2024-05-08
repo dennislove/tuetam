@@ -2,26 +2,29 @@ import React, { useEffect, useState } from 'react'
 
 import { getDatabase, ref, child, get, set, remove  } from "firebase/database";
 import FormAddNews from './FormAddNews';
+import ReactPaginate from 'react-paginate';
 
 function NewsTable() {
 
   const [showForm, setShowForm] = useState(false); // useState hook để lưu trữ trạng thái hiển thị (mặc định là false)
-  const [currentItem, setCurrentItem] = useState(null);
 
   const handleClick = () => {
     setShowForm(!showForm); // Thay đổi trạng thái hiển thị khi click
   };
 
-  const [query, setQuery] =useState("") //luu gia tri khi search
-  
-  const isChange = (event) =>{
-    setQuery(event.target.value);
-    console.log(query)
-  }
-
   // select database
   const [news, setNews] = useState([]);
   const [filteredNews, setFilteredNews] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredNews.slice(indexOfFirstItem, indexOfLastItem);
+
+  const totalPages = Math.ceil(filteredNews.length / itemsPerPage);
+  const firstItemRank = ((currentPage - 1) * itemsPerPage) + 1;
+
   useEffect(() => {
     const dbRef = ref(getDatabase());
 
@@ -34,7 +37,6 @@ function NewsTable() {
             createdAt: new Date(value.createdAt).toLocaleString()
           }));
           setNews(fetchedNews);
-         
         } else {
           console.log("No data available in News");
         }
@@ -44,18 +46,30 @@ function NewsTable() {
       });
   }, []);
 
+  const [query, setQuery] = useState('');
+  const handleSearchChange = (event) => {
+    setQuery(event.target.value.toLowerCase());
+  };
+
   useEffect(() => {
-    // Lọc news dựa trên giá trị tìm kiếm title
     const results = news.filter(item =>
-      item.title.toLowerCase().includes(query) 
+      item.title.toLowerCase().includes(query)
     );
     setFilteredNews(results);
-  }, [query, news]); 
+    if (currentPage > Math.ceil(results.length / itemsPerPage)) {
+      setCurrentPage(Math.ceil(results.length / itemsPerPage) || 1);
+    }
+  }, [query, news]);
+
+  // Pagination handler
+  const handlePageClick = (event) => {
+    setCurrentPage(event.selected + 1);
+  };
 
   const handleEditNews = (newsId) => {
     const item = news.find(item => item.id === newsId);
     if (item) {
-      setCurrentItem(item); // Set the current item to the one to be edited
+      // Set the current item to the one to be edited
       setShowForm(true); // Show the form
     }
   };
@@ -98,7 +112,7 @@ function NewsTable() {
                 id="search-news"
                 className="outline-none w-full p-2"
                 placeholder="Search..."
-                onChange={(event) =>isChange(event)}
+               value={query} onChange={handleSearchChange}
               />
               <button className='bg-indigo-600 px-4 rounded hover:bg-indigo-700  text-white'>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -136,10 +150,10 @@ function NewsTable() {
             </thead>
             <tbody>
               {/* Example row */}
-              {filteredNews.map((item, index) => (
-              <tr key={index+1} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+              {currentItems.map((item, index) => (
+              <tr key={firstItemRank + index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td className="py-4 px-6">
-                 {index+1}
+                 {firstItemRank + index}
                 </td>
                 <td className="py-4 px-6">
                   {item.title}
@@ -160,6 +174,29 @@ function NewsTable() {
             </tbody>
           </table>
         </div>
+
+        <div className="flex justify-between items-center mt-4">
+        <ReactPaginate
+        previousLabel="Previous"
+        nextLabel="Next"
+        breakLabel="..."
+        pageCount={totalPages}
+        marginPagesDisplayed={3}
+        pageRangeDisplayed={5}
+        onPageChange={handlePageClick}
+        containerClassName="flex gap-2"
+        pageClassName="px-4 py-2 text-sm text-white bg-blue-500 rounded hover:bg-blue-600"
+        previousClassName="px-4 py-2 text-sm text-white bg-blue-500 rounded hover:bg-blue-600"
+        nextClassName="px-4 py-2 text-sm text-white bg-blue-500 rounded hover:bg-blue-600"
+        disabledClassName="opacity-50 cursor-not-allowed"
+        activeClassName="bg-blue-600"
+        initialPage={currentPage - 1}
+      />
+  <span className="text-sm">
+    Page {currentPage} of {totalPages}
+  </span>
+</div>
+
 </div>
 
   )

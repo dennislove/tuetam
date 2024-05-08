@@ -3,6 +3,7 @@ import emailjs, { send } from '@emailjs/browser';
 import EmailSentNotification from './EmailSentNotification';
 import ContactMap from './ContactMap';
 import FormInput from './FormInput';
+import ButtonOutLine from '../Button/ButtonOutLine.jsx';
 
 function NewContact() {
   const inputs = [
@@ -44,6 +45,7 @@ function NewContact() {
    
   ]
   const [isSent, setIsSent] = useState(false);
+
   const handleSendEmail = () => {
     // Gửi email...
     setIsSent(true);
@@ -58,11 +60,9 @@ function NewContact() {
     setValues({...values, [e.target.name]: e.target.value})
   }
  
-
   const [error, setError] = useState(false)
 
   const form = useRef();
-
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -119,12 +119,7 @@ function NewContact() {
           </div>
           <div className='mt-5'>
             
-            <button onClick={handleSendEmail} value="Send"  className="px-8 py-4 border-2 border-yellow-600 font-semibold text-yellow-600 rounded-lg transition-all 
-                duration-1000 ease-in-out inline-block overflow-hidden relative capitalize shadow-md hover:bg-yellow-600 hover:text-white
-                before:absolute before:-left-[100%] hover:before:left-full before:top-0 before:w-full before:h-full
-            before:bg-gradient-to-r before:from-transparent  before:via-white before:to-transparent before:transition-all before:duration-500 before:ease-linear">
-            GỬI ĐI
-            </button>
+            <ButtonOutLine value="Send" onClick={handleSendEmail} name="GỬI ĐI"/>
         </div>
         {isSent && <EmailSentNotification />}
           </form>
