@@ -1,23 +1,41 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 // import { useNavigate, useHistory} from 'react-router-dom';
 import { useNavigate  } from 'react-router-dom';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import ButtonOutLine from '../Button/ButtonOutLine.jsx'
 
+
 const PricingCard = ({option, description, price, priceOld,buttonLabel,features}) => {
     const navigate = useNavigate();
   const auth = getAuth();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, user => {
+        if (user) {
+            setIsLoggedIn(true); // User is signed in.
+        } else {
+            setIsLoggedIn(false); // User is signed out.
+        }
+    });
+
+    return () => unsubscribe(); // Clean up the subscription on unmount
+}, []);
   const numericPrice = parseFloat(price.replace(/,/g, ''));
   const numericPriceOld = parseFloat(priceOld.replace(/,/g, ''));
 
   // Calculate discount
   const discount = numericPriceOld - numericPrice;
   const handleBuyNow = () => {
-    navigate('/dich-vu/payment', { 
-        state: { price: numericPrice, priceOld: numericPriceOld, discount } 
-      });
+    if(isLoggedIn){
+        navigate('/dich-vu/payment', { 
+            state: { price: numericPrice, priceOld: numericPriceOld, discount } 
+          });
+    }else{
+        navigate('/sign-in')
+    }
   };
+
   return (
     <div className=" hover:border-yellow-600 hover:-translate-y-5 transform duration-300 flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                     <h3 className="mb-4 text-2xl font-semibold">{option}</h3>
@@ -40,8 +58,7 @@ const PricingCard = ({option, description, price, priceOld,buttonLabel,features}
                     ))}
                         
                     </ul>
-            <ButtonOutLine onClick={handleBuyNow}  name = {buttonLabel}/>
-                 
+             <ButtonOutLine onClick={handleBuyNow}  name = {buttonLabel}/> 
       </div>
   );
 };

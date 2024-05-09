@@ -6,10 +6,8 @@ import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import NewsPage from "../pages/News/NewsPage";
 import ProductSer from "../pages/Service/ProductSer";
 import ContactPage from "../pages/ContactCT/ContactPage";
-// import NewsTable from "../admin/News/NewsTable";
 import DefauComponent from '../admin/DefautComponent/DefautComponent'
 import DetailNewsPage from "../pages/News/DetailNewsPage";
-import SignIn from "../admin/Account/SignIn";
 import SignUp from "../admin/Account/SignUp";
 import { withAuthProtected } from "../admin/Account/ProtectedAuth";
 import SignInClient from "../components/auth/sign-in";
@@ -66,20 +64,6 @@ export const routes = [
         isShowHeader: true,
         
     },
-   
-    {
-        path:'/sign-in',
-        element:SignInClient,
-        isShowHeader: true,
-        
-    },
-    {
-        path:'/sign-up',
-        element:SignUpClient,
-        // element:SignUp,
-        isShowHeader: true,
-        
-    },
     {
         path:'/dich-vu/payment',
         element:PayBill,
@@ -93,17 +77,23 @@ export const routes = [
     },
     {
         path:'admin/api/news',
-        // element:DefauComponent,
         element:withAuthProtected(DefauComponent),
         protected: true
     },
     {
-        path:'admin/api/signin',
-        element:SignIn,
+        path:'admin/api/sign-up',
+        element:SignUp,
         protected: false
     },
     {
-        path:'admin/api/signup',
-        element:SignUp
+        path:'/sign-in',
+        element:SignInClient,
+        isShowHeader: true,
+        protected: false
+    },
+    {
+        path:'/sign-up',
+        element:SignUpClient,
+        isShowHeader: true,
     },
 ]

@@ -1,16 +1,16 @@
 import {
-  Card,
-  Input,
   Checkbox,
   Button,
   Typography,
 } from "@material-tailwind/react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation  } from "react-router-dom";
 import { getAuth,createUserWithEmailAndPassword } from 'firebase/auth';
 import image from '../../images/pattern.png'
 import twitter from '../../images/twitter-logo.svg'
 import Footer from "../Footer/Footer";
+
+import { addUserToDatabase } from "./addUserToDb";
 
 export function SignUpClient() {
   const [email, setEmail] = useState('');
@@ -18,20 +18,25 @@ export function SignUpClient() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
 
+  const location = useLocation();
   const navigate = useNavigate();
   const auth = getAuth();
 
   const handleSignUp  = (event) => {
     event.preventDefault(); // Ngăn không cho form thực hiện hành động mặc định của nó (gửi dữ liệu form)
+    
     if (password !== confirmPassword) {
       setError("Passwords do not match");
       return;
     }
     try {
+      const role = location.pathname.includes("admin/api") ? "admin" : "user";
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Đăng nhập thành công, userCredential.user chứa thông tin người dùng
-        navigate('/sign-in'); // Chuyển hướng người dùng đến trang yêu cầu sau khi đăng nhập thành công
+        const user = userCredential.user;
+        // Optionally, call a function to store user info in Realtime Database
+        addUserToDatabase(user.uid, email, role);
+        navigate(role === "admin" ? '/admin/api/sign-in' : '/sign-in');
       })
       .catch((error) => {
         // Xử lý các lỗi xuất hiện, ví dụ như email không hợp lệ hoặc mật khẩu sai

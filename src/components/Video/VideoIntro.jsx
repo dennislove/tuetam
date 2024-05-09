@@ -11,7 +11,7 @@ function VideoIntro() {
               <Button name="CHI TIẾT"/>
             </Link>
         <div className=' flex flex-col'>
-            <h2 className='font-semibold text-white '>DỊCH VỤ QUẢNG CÁO TRẦM HƯƠNG</h2>
+            <h2 className='md:font-semibold  text-white '>DỊCH VỤ QUẢNG CÁO TRẦM HƯƠNG</h2>
             <span className=' text-center font-oxa text-yellow-600'>TUỆ TÂM</span>
         </div>
        

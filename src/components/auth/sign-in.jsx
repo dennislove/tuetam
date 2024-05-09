@@ -1,25 +1,29 @@
 import {
-  Card,
-  Input,
   Checkbox,
   Button,
   Typography,
 } from "@material-tailwind/react";
+
 import { Link ,useNavigate} from "react-router-dom";
 import React, { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
-import { auth, googleProvider, twitterProvider } from '../../App.js';
+import { auth, googleProvider } from '../../App.js';
+import { getDatabase, ref, get } from "firebase/database";
 
 import image from '../../images/pattern.png'
 import twitter from '../../images/twitter-logo.svg'
 import Footer from "../Footer/Footer";
+import { addUserToDatabase } from "./addUserToDb";
 
 function signInWithGoogle() {
 
   signInWithPopup(auth, googleProvider)
     .then((result) => {
+      const user = result.user;
+        // Optionally, call a function to store user info in Realtime Database
+        addUserToDatabase(user);
       // Đăng nhập thành công, có thể lấy thông tin người dùng từ result.user
-      //  navigate('/', { replace: true }); 
+        //navigate('/', { replace: true }); 
       console.log(result.user);
     })
     .catch((error) => {
@@ -28,30 +32,45 @@ function signInWithGoogle() {
     });
 }
 
-
-export function SignInClient({ auth }) {
+export function SignInClient() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  // const auth = getAuth();
+  const auth = getAuth();
 
   const handleSignIn = (event) => {
-    event.preventDefault(); // Ngăn không cho form thực hiện hành động mặc định của nó (gửi dữ liệu form)
-    
+     event.preventDefault(); 
+    // console.log("Form Submitted");
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Đăng nhập thành công, userCredential.user chứa thông tin người dùng
-        navigate('/', { replace: true }); // Chuyển hướng người dùng đến trang yêu cầu sau khi đăng nhập thành công
+        console.log("User logged in:", userCredential.user);
+        fetchUserInfo(userCredential.user.uid);
       })
       .catch((error) => {
-        // Xử lý các lỗi xuất hiện, ví dụ như email không hợp lệ hoặc mật khẩu sai
-        alert('Đăng nhập thất bại: ' + error.message);
+        alert('Login failed: ' + error.message);
       });
   };
+
+  function fetchUserInfo(uid) {
+    const db = getDatabase();
+    const userRef = ref(db, 'Users/' + uid);
+
+    get(userRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        const userInfo = snapshot.val();
+        navigate(userInfo.auth === "admin" ? '/admin/api/news' : '/', { replace: true });
+      } else {
+        navigate('/', { replace: true }); // Default redirect if no specific role is found
+      }
+    }).catch((error) => {
+      console.error("Error fetching user data:", error);
+    });
+  }
+  
   return (
    <div>
       <section className="m-8 flex gap-4">
-        <form className="w-full lg:w-3/5 mt-24" >
+        <div className="w-full lg:w-3/5 mt-24" >
           <div className="text-center">
             <h2 variant="h2" className="font-bold mb-4 text-4xl">Đăng Nhập</h2>
             <h2 variant="paragraph" color="blue-gray" className="text-lg font-normal">Vui lòng nhập email và mật khẩu.</h2>
@@ -61,28 +80,27 @@ export function SignInClient({ auth }) {
               <label htmlFor="email" color="blue-gray" className="-mb-3 font-medium">
                 Email
               </label>
-              <input
-              type="email" id="email" name="email" required
-                placeholder="name@mail.com"
-                className=" border p-3 rounded-lg focus:!border-t-gray-900"
-                value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              />
+             
+              <input type="email" id="email" name="email" required
+               className=" border p-3 rounded-lg focus:!border-t-gray-900"
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)} />
               <label htmlFor="password" color="blue-gray" className="-mb-3 font-medium">
                 Mật khẩu
               </label>
-              <input
-                type="password" id="password" name="password" required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="********"
-                className=" border p-3 rounded-lg focus:!border-t-gray-900"
-              />
+              <input type="password" id="password" name="password" required
+              className=" border p-3 rounded-lg focus:!border-t-gray-900"
+              placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)} />
+             
             </div>
             
-            <Button className="mt-6 bg-black" fullWidth type="submit">
+             <Button className="mt-6 bg-black" fullWidth type="submit">
               Đăng Nhập
-            </Button>
+            </Button> 
+             
   
             <div className="flex items-center justify-between gap-2 mt-6">
               <div className=" flex">
@@ -135,7 +153,7 @@ export function SignInClient({ auth }) {
               <Link to="/sign-up" className="text-gray-900 ml-1 underline">Tạo ngay</Link>
             </h3>
         
-        </form>
+        </div>
         <div className="w-2/5 h-full hidden lg:block">
           <img
             src={image}

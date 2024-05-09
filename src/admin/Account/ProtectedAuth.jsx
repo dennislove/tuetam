@@ -5,6 +5,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 // Tạo Context để cung cấp và sử dụng trạng thái xác thực
 const AuthContext = createContext(null);
 
+
 // Component Provider để xử lý trạng thái xác thực và phản hồi tương ứng
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -23,6 +24,7 @@ export const AuthProvider = ({ children }) => {
 
     return () => unsubscribe();
   }, [auth]);
+
 
   if (loading) {
     return  (
@@ -48,7 +50,7 @@ export function withAuthProtected(Component) {
     useEffect(() => {
       // Ensure the protection is only applied to exactly "/admin/api/news"
       if (!user && location.pathname === '/admin/api/news') {
-        navigate('/admin/api/signin', { state: { from: location } });
+        navigate('/admin/api/sign-in', { state: { from: location } });
       }
     }, [user, navigate, location.pathname]); // Add location.pathname to dependencies
 

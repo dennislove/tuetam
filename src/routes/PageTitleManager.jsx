@@ -17,7 +17,8 @@ const PageTitleManager = () => {
     '/sign-in': 'TT | Đăng Nhập',
     '/sign-up': 'TT | Đăng Ký',
     '/admin/api/news': 'Admin || Tuệ Tâm',
-    '/admin/api/signin': 'Admin || Login',
+    '/admin/api/sign-in': 'Admin || Login',
+    '/admin/api/sign-up': 'Admin || Register',
     // Không định nghĩa '*' tại đây
   };
 

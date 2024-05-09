@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext  } from 'react'
 import logo from '../../images/logo.png'
 import { Link, useLocation } from 'react-router-dom';
 import data from '../../assets/data.json'
 import clsx from 'clsx';
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
 import { match } from 'path-to-regexp';  // Import match from path-to-regexp
 import ButtonOutLine from '../Button/ButtonOutLine';
@@ -32,13 +33,33 @@ const NavItem = ({ children, href, id }) => {
     </li>
   );
 };
-
-
   
 function NavbarHeader() {
   const [isSideMenuOpen, setMenu] = useState(false);
   const headerList = data.sidebar
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const auth = getAuth();
 
+  useEffect(() => {
+      const unsubscribe = onAuthStateChanged(auth, user => {
+          if (user) {
+              setIsLoggedIn(true); // User is signed in.
+          } else {
+              setIsLoggedIn(false); // User is signed out.
+          }
+      });
+
+      return () => unsubscribe(); // Clean up the subscription on unmount
+  }, []);
+
+  const handleLogout = () => {
+    signOut(auth).then(() => {
+        console.log("User logged out successfully");
+        setIsLoggedIn(false); // Update state to reflect that user is no longer logged in
+    }).catch((error) => {
+        console.error("Logout failed:", error);
+    });
+};
   return (
     <main className='shadow-md w-full top-0 left-0 relative'>
         <nav className="md:h-20 sm:h-16 pm:h-16 bg-black lg:px-[120px]  pm:px-5 " >
@@ -64,12 +85,23 @@ function NavbarHeader() {
                   ))}
               </ul>
               <div className=''>
-              <Link to='/sign-in' className=" lg:px-8 md:px-6 lg:py-4 md:py-2 pm:px-6 pm:py-2 border-2 border-yellow-600 font-semibold text-yellow-600 rounded-lg transition-all 
-                  duration-1000 ease-in-out inline-block overflow-hidden relative capitalize shadow-md hover:bg-yellow-600 hover:text-white
-                  before:absolute before:-left-[100%] hover:before:left-full before:top-0 before:w-full before:h-full
-              before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:transition-all before:duration-500 before:ease-linear">
-              ĐẶT NGAY
+              {isLoggedIn ? 
+             <div className=' flex gap-4 items-center'>
+                <Link to='/dich-vu/ads'>
+                  <ButtonOutLine name="TẠO ADS"/>
+                </Link> 
+               <div onClick={handleLogout}>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-white">
+                  <path fillRule="evenodd" d="M7.5 3.75A1.5 1.5 0 0 0 6 5.25v13.5a1.5 1.5 0 0 0 1.5 1.5h6a1.5 1.5 0 0 0 1.5-1.5V15a.75.75 0 0 1 1.5 0v3.75a3 3 0 0 1-3 3h-6a3 3 0 0 1-3-3V5.25a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3V9A.75.75 0 0 1 15 9V5.25a1.5 1.5 0 0 0-1.5-1.5h-6Zm10.72 4.72a.75.75 0 0 1 1.06 0l3 3a.75.75 0 0 1 0 1.06l-3 3a.75.75 0 1 1-1.06-1.06l1.72-1.72H9a.75.75 0 0 1 0-1.5h10.94l-1.72-1.72a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
+                </svg>
+               </div>
+
+             </div>:
+              <Link to='/sign-in'>
+                <ButtonOutLine name="ĐẶT NGAY"/>
               </Link>
+              }
+              
           </div>
           </section>
   
@@ -96,9 +128,24 @@ function NavbarHeader() {
                           </li>
                  ))}
             </ul>
-            <div className=' mt-5' >
+            <div className='mt-5'>
+            {isLoggedIn ? 
+             <div className='flex flex-col gap-3'>
+                <Link to='/dich-vu/ads'>
+                  <ButtonOutLine name="TẠO ADS"/>
+                </Link> 
+               <div onClick={handleLogout} className='text-black'> 
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+                  <path fillRule="evenodd" d="M7.5 3.75A1.5 1.5 0 0 0 6 5.25v13.5a1.5 1.5 0 0 0 1.5 1.5h6a1.5 1.5 0 0 0 1.5-1.5V15a.75.75 0 0 1 1.5 0v3.75a3 3 0 0 1-3 3h-6a3 3 0 0 1-3-3V5.25a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3V9A.75.75 0 0 1 15 9V5.25a1.5 1.5 0 0 0-1.5-1.5h-6Zm10.72 4.72a.75.75 0 0 1 1.06 0l3 3a.75.75 0 0 1 0 1.06l-3 3a.75.75 0 1 1-1.06-1.06l1.72-1.72H9a.75.75 0 0 1 0-1.5h10.94l-1.72-1.72a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
+                </svg>
+               </div>
+
+             </div>:
+              <Link to='/sign-in'>
                 <ButtonOutLine name="ĐẶT NGAY"/>
-              </div>
+              </Link>
+              }
+        </div>
             </section>
           </div>
   

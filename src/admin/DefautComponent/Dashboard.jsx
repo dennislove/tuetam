@@ -142,7 +142,7 @@ function Dashboard() {
               </p>
             </li>
             <li>
-              <a className="" href="#">
+              <a className="" href="/sign-in">
                 <button
                   className="align-middle select-none font-rob font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-[#607D8B] hover:bg-[#607D8B]/10 active:bg-[#607D8B]/30 w-full flex items-center gap-4 px-4 capitalize"
                   type="button"
@@ -168,7 +168,7 @@ function Dashboard() {
               </a>
             </li>
             <li>
-              <a className="" href="#">
+              <a className="" href="/admin/api/sign-up">
                 <button
                   className="align-middle select-none font-rob font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-[#607D8B] hover:bg-[#607D8B]/10 active:bg-[#607D8B]/30 w-full flex items-center gap-4 px-4 capitalize"
                   type="button"
@@ -183,7 +183,7 @@ function Dashboard() {
                     <path d="M5.566 4.657A4.505 4.505 0 016.75 4.5h10.5c.41 0 .806.055 1.183.157A3 3 0 0015.75 3h-7.5a3 3 0 00-2.684 1.657zM2.25 12a3 3 0 013-3h13.5a3 3 0 013 3v6a3 3 0 01-3 3H5.25a3 3 0 01-3-3v-6zM5.25 7.5c-.41 0-.806.055-1.184.157A3 3 0 016.75 6h10.5a3 3 0 012.683 1.657A4.505 4.505 0 0018.75 7.5H5.25z" />
                   </svg>
                   <p className="block antialiased font-rob text-base leading-relaxed text-inherit font-medium capitalize">
-                    sign up
+                  account management
                   </p>
                 </button>
               </a>
