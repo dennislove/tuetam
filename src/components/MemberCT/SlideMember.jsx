@@ -42,8 +42,8 @@ function SlideMember() {
   };
   return (
     <div className='py-10'>
-        <div className='mb-5 text-center font-oxa'>
-        <h2 className=' font-normal md:text-[40px]  sm:text-[35px] pm:text-[30px] text-white capitalize'>Sản Phẩm Từ Trầm Hương</h2>
+        <div className='mb-5 text-center '>
+        <h2 className=' font-normal md:text-[40px] font-oxa sm:text-[35px] pm:text-[30px] text-white capitalize'>Sản Phẩm Từ Trầm Hương</h2>
     </div>
         <div className="fui-testimonial-1 mt-10">
             

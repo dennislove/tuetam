@@ -21,7 +21,7 @@ function RightBarIV() {
 
   return (
     <div className=' md:px-4 '>
-        <h2 className='mt-5 mb-3 font-bold text-xl text-start ml-4'>Ngành Nghề</h2>
+        <h4 className='mt-5 mb-3 font-bold text-xl text-start ml-4'>Ngành Nghề</h4>
               {customers.slice(0, itemsToShow).map((customer, index) => (
                 <div key={index} className='bg-white md:px-4 py-2 flex justify-between sm:items-center'>
                   <span className='text-gray-800 font-medium'>{customer.jobs}</span>

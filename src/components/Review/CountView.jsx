@@ -5,8 +5,8 @@ function CountView() {
   return (
     <div className='grid md:grid-cols-2 sm:grid-cols-1 max-w-[1300px] m-auto relative '>
         <div className='flex flex-col justify-center items-center '>
-            <h4 className=' uppercase font-bold text-yellow-600'>Tình hình</h4>
-            <h1 className='text-3xl font-bold text-white'>Đánh giá tổng quát</h1>
+            <h1 className=' uppercase font-bold text-yellow-600'>Tình hình</h1>
+            <h4 className='text-3xl font-bold text-white'>Đánh giá tổng quát</h4>
         </div>
         <div className='grid grid-cols-1'>
             <section className=' border-b grid grid-cols-2 '>

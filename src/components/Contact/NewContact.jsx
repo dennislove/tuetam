@@ -86,8 +86,8 @@ function NewContact() {
     <div className=" bg-[#000022] pt-10 ">
     <div className=' max-w-[1300px] lg:m-auto  pm:mx-10 relative'>
         <div className='relative text-center '>
-            <div className='mb-5 text-center font-oxa'>
-                <h2 className='  font-normal text-[40px] text-white capitalize'>Liên Hệ Quảng Cáo</h2>
+            <div className='mb-5 text-center '>
+                <h2 className=' font-oxa font-normal text-[40px] text-white capitalize'>Liên Hệ Quảng Cáo</h2>
             </div>
             
         </div>

@@ -33,14 +33,14 @@ const showLess = () => {
     
     <div className='grid md:grid-cols-3 pm:grid-cols-1 md:gap-5 w-full'>
        <div className=' col-span-2 bg-white px-4 border-b pb-4'>
-        <h2 className='mt-5 mb-3 font-bold text-xl text-start ml-4'>Việc Làm Tuyển Gấp</h2>
+        <h4 className='mt-5 mb-3 font-bold text-xl text-start ml-4'>Việc Làm Tuyển Gấp</h4>
       
           {customers.slice(0, itemsToShow).map(customer => (
             <div className="w-full rounded flex overflow-hidden shadow-lg border border-gray-200  p-4 my-4 " key={customer.id}>
               <img className="w-[100px] h-full my-auto" src={customer.imgSrc} alt={customer.imgAlt}/>
               <div className="px-6 py-4 text-start grow">
-                <h2 className='font-bold text-xl mb-2'>{customer.jobs}</h2>
-                <h3 className=" text-gray-500">{customer.company}</h3>
+                <h4 className='font-bold text-xl mb-2'>{customer.jobs}</h4>
+                <h4 className=" text-gray-500">{customer.company}</h4>
                 <p className="text-gray-500 text-sm flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-black mr-1">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -75,25 +75,25 @@ const showLess = () => {
           
           <div className='mt-4 py-5 px-3 bg-gray-200 rounded-lg text-black'>
                   <div className='flex gap-2 mt-3'>
-                      <h2 className=' underline'>Giải pháp doanh nghiệp</h2>
+                      <h4 className=' underline'>Giải pháp doanh nghiệp</h4>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                   </svg>
                   </div>
                   <div className='flex gap-2 mt-3'>
-                      <h2 className=' underline'>Diễn đàn cộng đồng</h2>
+                      <h4 className=' underline'>Diễn đàn cộng đồng</h4>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                   </svg>
                   </div>
                   <div className='flex gap-2 mt-3'>
-                      <h2 className=' underline'>Hợp đồng trực tiếp</h2>
+                      <h4 className=' underline'>Hợp đồng trực tiếp</h4>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                   </svg>
                   </div>
                   <div className='flex gap-2 mt-3'>
-                      <h2 className=' underline'>Trung tâm trợ giúp</h2>
+                      <h4 className=' underline'>Trung tâm trợ giúp</h4>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                   </svg>

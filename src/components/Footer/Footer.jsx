@@ -56,7 +56,7 @@ function Footer() {
   </svg>
             
           <div className='text-white'>
-            <h2 className=' uppercase font-semibold '>Address</h2>
+            <h4 className=' uppercase font-semibold '>Address</h4>
             <span>123 Nguyễn Văn Linh, Vĩnh Trung, Hải Châu, Đà Nẵng, Việt Nam</span>
           </div>
             </div>
@@ -66,7 +66,7 @@ function Footer() {
 </svg>
 
           <div className='text-white'>
-            <h2 className=' uppercase font-semibold '>Hotline</h2>
+            <h4 className=' uppercase font-semibold '>Hotline</h4>
             <span>0123456</span>
           </div>
             </div>
@@ -76,12 +76,12 @@ function Footer() {
 </svg>
 
           <div className='text-white'>
-            <h2 className=' uppercase font-semibold '>Email</h2>
+            <h4 className=' uppercase font-semibold '>Email</h4>
             <span>tramhuongtuetam@gmail.com</span>
           </div>
             </div>
         </div>
-        <h2 className='text-center font-sm text-white mt-10'>2024 Copyright <span className='text-yellow-600'>Trầm Hương Tuệ Tâm</span>. Designed by <span className='text-yellow-600'>dennistran</span></h2>
+        <h4 className='text-center font-sm text-white mt-10'>2024 Copyright <span className='text-yellow-600'>Trầm Hương Tuệ Tâm</span>. Designed by <span className='text-yellow-600'>dennistran</span></h4>
       </div>
     </div>
   )

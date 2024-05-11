@@ -49,9 +49,9 @@ const VideoClipComponent = () => {
     return (
       <div className='relative mt-10 grid md:grid-cols-6 sm:grid-cols-2 pm:grid-cols-1 gap-5 lg:mx-auto pm:mx-5'>
         {media.map((item) => (
-          <div className="md:col-span-2" key={item.id}>
+          <div className="md:col-span-2 " key={item.id}>
             {!videoStates[item.id]?.isPlaying && (
-              <div className="cursor-pointer w-full relative overflow-hidden block" onClick={() => handlePlay(item.id)} >
+              <div className="cursor-pointer w-full rounded-lg relative overflow-hidden block" onClick={() => handlePlay(item.id)} >
                 <button className='absolute text-white left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-300 z-10 rounded-full p-3'>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                     <path fillRule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clipRule="evenodd" />

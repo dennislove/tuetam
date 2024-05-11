@@ -12,7 +12,7 @@ function VideoIntro() {
             </Link>
         <div className=' flex flex-col'>
             <h2 className='md:font-semibold  text-white '>DỊCH VỤ QUẢNG CÁO TRẦM HƯƠNG</h2>
-            <span className=' text-center font-oxa text-yellow-600'>TUỆ TÂM</span>
+            <h2 className=' text-center font-oxa text-yellow-600'>TUỆ TÂM</h2>
         </div>
        
         </div>

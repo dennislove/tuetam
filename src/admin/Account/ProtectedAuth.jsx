@@ -50,7 +50,7 @@ export function withAuthProtected(Component) {
     useEffect(() => {
       // Ensure the protection is only applied to exactly "/admin/api/news"
       if (!user && location.pathname === '/admin/api/news') {
-        navigate('/admin/api/sign-in', { state: { from: location } });
+        navigate('/sign-in', { state: { from: location } });
       }
     }, [user, navigate, location.pathname]); // Add location.pathname to dependencies
 

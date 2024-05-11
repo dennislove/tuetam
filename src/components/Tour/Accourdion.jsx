@@ -8,7 +8,7 @@ const Accourdion = ({ items }) => {
   };
 
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col ">
       {items.map((item, index) => (
         <div key={index} className="mb-4">
           <button

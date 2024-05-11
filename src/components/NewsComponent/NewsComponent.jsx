@@ -120,8 +120,8 @@ const clearInput = () => {
           transform ease-out '/>
     
           <div className='absolute flex flex-col bg-gradient-to-r from-yellow-100/70 to-yellow-50 w-full text-center top-0 h-full -translate-y-full opacity-0 group-hover:opacity-100 transform ease-linear duration-200 group-hover:translate-y-0'>
-            <h2 className='text-black top-1/2 absolute left-1/2 -translate-x-1/2 -translate-y-3/4  text-lg font-semibold mt-2 '>
-              {item.title}</h2>
+            <h4 className='text-black top-1/2 absolute left-1/2 -translate-x-1/2 -translate-y-3/4  text-lg font-semibold mt-2 '>
+              {item.title}</h4>
               
                 <div className='w-full h-[3px] bg-yellow-600 absolute top-3/4'></div>
               </div>

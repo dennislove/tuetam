@@ -19,7 +19,6 @@ const PageTitleManager = () => {
     '/admin/api/news': 'Admin || Tuệ Tâm',
     '/admin/api/sign-in': 'Admin || Login',
     '/admin/api/sign-up': 'Admin || Register',
-    // Không định nghĩa '*' tại đây
   };
 
   useEffect(() => {
@@ -27,8 +26,9 @@ const PageTitleManager = () => {
       let title = '404'; // Tiêu đề mặc định khi không khớp bất kỳ đường dẫn nào
 
       // Kiểm tra xem có khớp với bất kỳ đường dẫn nào trong titleMap không
+      //'/dich-vu/ads' || '/dich-vu/payment'||
       for (let path in titleMap) {
-        const matcher = match(path, { decode: decodeURIComponent, end: path === '/dich-vu/ads' || '/dich-vu/payment'|| '/News/:slug' ? false : true });
+        const matcher = match(path, { decode: decodeURIComponent, end: path ===  '/News/:slug' ? false : true });
         if (matcher(location.pathname)) {
           title = titleMap[path];
           break;
