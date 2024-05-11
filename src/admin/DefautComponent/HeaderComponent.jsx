@@ -1,6 +1,6 @@
 import React from 'react'
 
-function HeaderComponent() {
+function HeaderComponent({name}) {
   return (
 <nav className="block w-full max-w-full bg-transparent text-black shadow-none rounded-xl transition-all px-0 py-1">
   <div className="flex flex-col-reverse justify-between gap-6 md:flex-row md:items-center">
@@ -19,13 +19,13 @@ function HeaderComponent() {
           </li>
           <li className="flex items-center text-blue-gray-900 antialiased font-rob text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-light-blue-500">
             <p className="block antialiased font-rob text-sm leading-normal text-blue-gray-900 font-normal">
-              news
+              {name}
             </p>
           </li>
         </ol>
       </nav>
       <h6 className="block antialiased tracking-normal font-rob text-base font-semibold leading-relaxed text-blue-gray-900">
-        news
+        {name}
       </h6>
     </div>
     <div className="flex items-center">
@@ -58,7 +58,7 @@ function HeaderComponent() {
             clipRule="evenodd"
             />
         </svg>
-        Sign In
+        Admin
     </button>
       <button
         aria-expanded="false"

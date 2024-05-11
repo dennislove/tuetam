@@ -9,6 +9,7 @@ import { getAuth,createUserWithEmailAndPassword } from 'firebase/auth';
 import image from '../../images/pattern.png'
 import twitter from '../../images/twitter-logo.svg'
 import { addUserToDatabase } from "../../components/auth/addUserToDb";
+import PasswordInput from "../../components/auth/PasswordInput";
 
 export function SignUp() {
   const [email, setEmail] = useState('');
@@ -34,7 +35,7 @@ export function SignUp() {
         const user = userCredential.user;
         // Optionally, call a function to store user info in Realtime Database
         addUserToDatabase(user.uid, email, role);
-        navigate(role === "admin" ? '/admin/api/sign-in' : '/sign-in');
+        navigate(role === "admin" ? '/sign-in' : '/sign-in');
       })
       .catch((error) => {
         // Xử lý các lỗi xuất hiện, ví dụ như email không hợp lệ hoặc mật khẩu sai
@@ -44,6 +45,14 @@ export function SignUp() {
     setError(error.message);
   }
 };
+const handlePasswordChange = (event) => {
+  setPassword(event.target.value);
+};
+
+const handleConfirmPasswordChange = (event) => {
+  setConfirmPassword(event.target.value);
+};
+
   return (
     <div>
       <section className="m-8 flex">
@@ -75,23 +84,18 @@ export function SignUp() {
               <label htmlFor="password" color="blue-gray" className="-mb-3 font-medium">
                 Mật khẩu
               </label>
-              <input
-                type="password" id="password" name="password" required
-                onChange={(e) => setPassword(e.target.value)}
+              <PasswordInput
                 value={password}
-                placeholder="********"
-                className=" border p-3 rounded-lg focus:!border-t-gray-900"
+                onChange={handlePasswordChange}
               />
+
               <label htmlFor="password" color="blue-gray" className="-mb-3 font-medium">
                 Xác nhận mật khẩu
               </label>
-              <input
-                type="password"  name="confirmpassword" required
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="********"
-                className=" border p-3 rounded-lg focus:!border-t-gray-900"
-              />
+             <PasswordInput
+             value={confirmPassword}
+             onChange={handleConfirmPasswordChange}
+             />
             </div>
            <div className="flex">
               <Checkbox

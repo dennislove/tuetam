@@ -3,9 +3,24 @@ import Footer from '../../components/Footer/Footer'
 import PricingCard from '../../components/Payment/PricingCard';
 import InterView from '../../components/Interview/InterView';
 import ReviewJop from '../../components/Interview/ReviewJop';
+import datas from '../../assets/data.json'
+
 // import img from '../../images/bg_interview.png'
 
 function Project() {
+  
+  const customer = datas.customer
+  const [data, setData] = useState(customer);
+  const [filteredData, setFilteredData] = useState(data);
+
+  const handleSearchSubmit = (searchTerm, selectedLocation) => {
+    const filtered  = data.filter(item =>
+      (item.jobs && searchTerm ? item.jobs.toLowerCase().includes(searchTerm.toLowerCase()) : true) &&
+      (item.location && selectedLocation ? item.location === selectedLocation : true) 
+  );
+    setFilteredData(filtered );
+  };
+
 
   const plans = [
     {
@@ -99,9 +114,9 @@ function Project() {
                   <h2 className=' font-oxa font-normal text-[40px] text-white capitalize'>Tuyển dụng cho đối tác</h2>
                   <h2 className=' mt-3 font-normal text-base text-white italic '>NV Bán hàng - NV Sản xuất - NV Đóng gói - NV Điều chế - NV Marketing</h2>
               </div>
-              <ReviewJop/>
+              <ReviewJop onSearchSubmit={handleSearchSubmit}/>
            </div>
-                <InterView/>
+                <InterView customers={filteredData}/>
         </div>
         </div>
       <Footer/>

@@ -10,7 +10,7 @@ function DefautComponent() {
     <div className=' flex min-h-screen bg-gray-50'>
         <Dashboard/>
         <div className='p-4 ml-80 w-full'>
-            <HeaderComponent/>
+            <HeaderComponent name="news"/>
             <div className='border-b-4'>
                 <NewsTable/>
             </div>

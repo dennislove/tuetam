@@ -11,6 +11,7 @@ import twitter from '../../images/twitter-logo.svg'
 import Footer from "../Footer/Footer";
 
 import { addUserToDatabase } from "./addUserToDb";
+import PasswordInput from "./PasswordInput";
 
 export function SignUpClient() {
   const [email, setEmail] = useState('');
@@ -46,6 +47,14 @@ export function SignUpClient() {
     setError(error.message);
   }
 };
+const handlePasswordChange = (event) => {
+  setPassword(event.target.value);
+};
+
+const handleConfirmPasswordChange = (event) => {
+  setConfirmPassword(event.target.value);
+};
+
   return (
     <div>
       <section className="m-8 flex">
@@ -77,23 +86,18 @@ export function SignUpClient() {
               <label htmlFor="password" color="blue-gray" className="-mb-3 font-medium">
                 Mật khẩu
               </label>
-              <input
-                type="password" id="password" name="password" required
-                onChange={(e) => setPassword(e.target.value)}
+              <PasswordInput
                 value={password}
-                placeholder="********"
-                className=" border p-3 rounded-lg focus:!border-t-gray-900"
+                onChange={handlePasswordChange}
               />
+
               <label htmlFor="password" color="blue-gray" className="-mb-3 font-medium">
                 Xác nhận mật khẩu
               </label>
-              <input
-                type="password"  name="confirmpassword" required
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="********"
-                className=" border p-3 rounded-lg focus:!border-t-gray-900"
-              />
+             <PasswordInput
+             value={confirmPassword}
+             onChange={handleConfirmPasswordChange}
+             />
             </div>
            <div className="flex">
               <Checkbox

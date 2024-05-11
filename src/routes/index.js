@@ -14,6 +14,7 @@ import SignInClient from "../components/auth/sign-in";
 import SignUpClient from "../components/auth/sign-up";
 import PayBill from "../components/Payment/PayBill";
 import FormAds from "../components/Form/FormAds";
+import Manager from "../admin/DefautComponent/Manager";
 
 export const routes = [
     {
@@ -78,6 +79,11 @@ export const routes = [
     {
         path:'admin/api/news',
         element:withAuthProtected(DefauComponent),
+        protected: true
+    },
+    {
+        path:'admin/api/manage-account',
+        element:withAuthProtected(Manager),
         protected: true
     },
     {

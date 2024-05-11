@@ -33,11 +33,20 @@ const NavItem = ({ children, href, id }) => {
     </li>
   );
 };
+const LoadingSpinner = () => (
+  <div className='relative w-full h-full bg-[#ffffff7b]'>
+      <div className='absolute -translate-x-1/2 translate-y-full left-1/2 top-1/2 '>
+          <div className='animate-spin w-20 h-20 border-[7px] rounded-full border-[#1dc071] border-t-transparent border-b-transparent'>
+          </div>
+      </div>
+  </div>
+);
   
 function NavbarHeader() {
   const [isSideMenuOpen, setMenu] = useState(false);
   const headerList = data.sidebar
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(false);
   const auth = getAuth();
 
   useEffect(() => {
@@ -51,17 +60,23 @@ function NavbarHeader() {
 
       return () => unsubscribe(); // Clean up the subscription on unmount
   }, []);
-
+  
   const handleLogout = () => {
+    setLoading(true);
     signOut(auth).then(() => {
         console.log("User logged out successfully");
         setIsLoggedIn(false); // Update state to reflect that user is no longer logged in
+        setTimeout(() => {
+          setLoading(false);
+      }, 2000);
     }).catch((error) => {
         console.error("Logout failed:", error);
+        setLoading(false);
     });
 };
   return (
     <main className='shadow-md w-full top-0 left-0 relative'>
+      {loading && <LoadingSpinner />}
         <nav className="md:h-20 sm:h-16 pm:h-16 bg-black lg:px-[120px]  pm:px-5 " >
             <section className="flex items-center justify-between">
               
@@ -140,7 +155,8 @@ function NavbarHeader() {
                 </svg>
                </div>
 
-             </div>:
+             </div>
+             :
               <Link to='/sign-in'>
                 <ButtonOutLine name="ĐẶT NGAY"/>
               </Link>

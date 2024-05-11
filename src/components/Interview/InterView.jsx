@@ -3,10 +3,10 @@ import data from '../../assets/data.json'
 import RightBarIV from './RightBarIV';
 import Button from '../Button/Button';
 
-function InterView() {
-  const customers = data.customer
+function InterView({ customers }) {
+  // const customers = data.customer
 
-  const [liked, setLiked] = useState(new Array(customers.length).fill(false));
+  const [liked, setLiked] = useState(new Array(customers.length).fill(true));
 
   const handleLike = (index) => {
     // Tạo một bản sao của mảng hiện tại

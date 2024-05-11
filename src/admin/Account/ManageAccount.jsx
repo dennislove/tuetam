@@ -1,21 +1,13 @@
 import React, { useEffect, useState } from 'react'
-
 import { getDatabase, ref, child, get, set, remove } from "firebase/database";
-import MediaAdmin from './MediaAdmin';
+import { Link } from 'react-router-dom'
 
-function MediaTable() {
+function ManageAccount() {
     const [showForm, setShowForm] = useState(false); // useState hook để lưu trữ trạng thái hiển thị (mặc định là false)
     const [currentItem, setCurrentItem] = useState(null);
 
-    const handleClick = () => {
-      setShowForm(!showForm); // Thay đổi trạng thái hiển thị khi click
-    };
-  
     const [query, setQuery] =useState("") //luu gia tri khi search
     
-    const handleChange = (event) => {
-      setQuery(event.target.value.toLowerCase());
-    };
   
     // select database
     const [media, setMedia] = useState([]);
@@ -24,7 +16,7 @@ function MediaTable() {
     useEffect(() => {
       const dbRef = ref(getDatabase());
   
-      get(child(dbRef, `Media`))
+      get(child(dbRef, `Users`))
         .then((snapshot) => {
           if (snapshot.exists()) {
             const fetchedMedia = Object.entries(snapshot.val()).map(([id, value]) => ({
@@ -46,7 +38,7 @@ function MediaTable() {
   useEffect(() => {
     // Lọc media dựa trên giá trị tìm kiếm
     const results = media.filter(item =>
-      item.title.toLowerCase().includes(query) 
+      item.email.toLowerCase().includes(query) 
     );
     setFilteredMedia(results);
   }, [query, media]); 
@@ -60,7 +52,7 @@ function MediaTable() {
     };
     const handleDeleteMedia = (mediaId) => {
       const db = getDatabase();
-      const mediaRef = ref(db, `Media/${mediaId}`);
+      const mediaRef = ref(db, `Users/${mediaId}`);
     
       remove(mediaRef)
         .then(() => {
@@ -72,44 +64,22 @@ function MediaTable() {
           console.error("Error deleting media item:", error);
         });
     };
-  
-    return (
+     return (
       <div className="mt-12 mb-8 flex flex-col gap-4">
         <div className="relative bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-gray-900/20 shadow-lg -mt-6 mb-2 p-6">
           <h6 className="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-white">
-            Media Table
+            Management Account
           </h6>
         </div>
-        <div className="flex gap-4 items-center justify-center">
-          <button className="rounded-full bg-indigo-500 text-white flex p-2" onClick={handleClick}>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-          </svg>
-  
-          </button>
-          
-          <div className="">
-            <label htmlFor="search-news" className="sr-only ">Search</label>
-            <div className='border flex shadow-sm focus:ring-indigo-500 focus:border-indigo-500 w-full sm:text-sm border-gray-300 rounded'>
-                <input
-                  type="text"
-                  name="search-news"
-                  id="search-news"
-                  className="outline-none w-full p-2"
-                  placeholder="Search..."
-                  value={query} onChange={handleChange}
-                />
-                <button className='bg-indigo-600 px-4 rounded hover:bg-indigo-700  text-white'>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                </svg>
-              </button>
-            </div>
-            
-          </div>
-         </div>
-         {!showForm && <MediaAdmin />}
-  
+       <div>
+       <Link to="/admin/api/sign-up" 
+            className=" cursor-pointer relative lg:px-8 md:px-6 lg:py-3 md:py-2 pm:px-6 pm:py-2 border-2 border-indigo-500 font-semibold text-white rounded-lg transition-all bg-indigo-500
+            duration-1000 ease-in-out inline-block overflow-hidden capitalize shadow-md hover:bg-transparent hover:text-indigo-500
+            before:absolute before:-left-[100%] hover:before:left-full before:top-0 before:w-full before:h-full
+        before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:transition-all before:duration-500 before:ease-linear">
+        Add Admin Account
+        </Link>
+       </div>
          {/* ----------table------------ */}
          
          <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
@@ -120,9 +90,11 @@ function MediaTable() {
                     #
                   </th>
                   <th scope="col" className="py-3 px-6">
-                    Title
+                    Email
                   </th>
-                 
+                  <th scope="col" className="py-3 px-6">
+                    Authentication
+                  </th>
                   <th scope="col" className="py-3 px-6">
                     Created At
                   </th>
@@ -139,9 +111,11 @@ function MediaTable() {
                    {index+1}
                   </td>
                   <td className="py-4 px-6">
-                    {item.title}
+                    {item.email}
                   </td>
-                 
+                  <td className="py-4 px-6">
+                    {item.auth}
+                  </td>
                   <td className="py-4 px-6">
                     {item.createdAt}
                   </td>
@@ -159,4 +133,4 @@ function MediaTable() {
   )
 }
 
-export default MediaTable
+export default ManageAccount

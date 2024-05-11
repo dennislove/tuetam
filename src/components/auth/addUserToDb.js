@@ -1,4 +1,6 @@
 import { getDatabase, ref, set } from "firebase/database";
+import { serverTimestamp } from '../../App';
+
 
 export  function addUserToDatabase(uid, email, role) {
   const db = getDatabase();
@@ -7,7 +9,8 @@ export  function addUserToDatabase(uid, email, role) {
   set(userRef, {
       uid: uid,
       email: email,
-      auth: role
+      auth: role,
+      createdAt: serverTimestamp()
   }).then(() => {
       console.log("User added to database with role:", role);
   }).catch((error) => {

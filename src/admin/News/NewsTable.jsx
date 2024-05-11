@@ -65,7 +65,6 @@ function NewsTable() {
   const handlePageClick = (event) => {
     setCurrentPage(event.selected + 1);
   };
-
   const handleEditNews = (newsId) => {
     const item = news.find(item => item.id === newsId);
     if (item) {
@@ -90,7 +89,7 @@ function NewsTable() {
 
   return (
     <div className="mt-12 mb-8 flex flex-col gap-4">
-      <div className="relative bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-gray-900/20 shadow-lg -mt-6 mb-8 p-6">
+      <div className="relative bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-gray-900/20 shadow-lg -mt-6 mb-2 p-6">
         <h6 className="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-white">
           News Table
         </h6>
@@ -177,19 +176,24 @@ function NewsTable() {
 
         <div className="flex justify-between items-center mt-4">
         <ReactPaginate
-        previousLabel="Previous"
-        nextLabel="Next"
+        previousLabel={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg> }
+        nextLabel={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>}
         breakLabel="..."
         pageCount={totalPages}
         marginPagesDisplayed={3}
         pageRangeDisplayed={5}
         onPageChange={handlePageClick}
         containerClassName="flex gap-2"
-        pageClassName="px-4 py-2 text-sm text-white bg-blue-500 rounded hover:bg-blue-600"
-        previousClassName="px-4 py-2 text-sm text-white bg-blue-500 rounded hover:bg-blue-600"
-        nextClassName="px-4 py-2 text-sm text-white bg-blue-500 rounded hover:bg-blue-600"
+        pageClassName="px-4 py-2 text-[16px] rounded-full hover:bg-gray-200"
+
+        previousClassName="p-2 text-sm text-gray-600 rounded-full hover:bg-gray-300"
+        nextClassName="p-2 text-sm text-gray-600 rounded-full hover:bg-gray-300"
         disabledClassName="opacity-50 cursor-not-allowed"
-        activeClassName="bg-blue-600"
+        activeClassName="bg-blue-600 text-white hover:bg-blue-700 "
         initialPage={currentPage - 1}
       />
   <span className="text-sm">

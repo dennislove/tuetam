@@ -14,6 +14,7 @@ import image from '../../images/pattern.png'
 import twitter from '../../images/twitter-logo.svg'
 import Footer from "../Footer/Footer";
 import { addUserToDatabase } from "./addUserToDb";
+import PasswordInput from "./PasswordInput.jsx";
 
 function signInWithGoogle() {
 
@@ -50,6 +51,10 @@ export function SignInClient() {
         alert('Login failed: ' + error.message);
       });
   };
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
 
   function fetchUserInfo(uid) {
     const db = getDatabase();
@@ -86,15 +91,14 @@ export function SignInClient() {
               placeholder="you@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)} />
+
               <label htmlFor="password" color="blue-gray" className="-mb-3 font-medium">
                 Mật khẩu
               </label>
-              <input type="password" id="password" name="password" required
-              className=" border p-3 rounded-lg focus:!border-t-gray-900"
-              placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)} />
-             
+              <PasswordInput
+                value={password}
+                onChange={handlePasswordChange}
+              />
             </div>
             
              <Button className="mt-6 bg-black" fullWidth type="submit">
