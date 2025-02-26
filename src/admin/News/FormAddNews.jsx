@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { database, storage, ref, set,get, push, storageRef, uploadBytes, getDownloadURL, serverTimestamp } from '../../App';
+import { database, storage, ref, set, push, storageRef, uploadBytes, getDownloadURL, serverTimestamp } from '../../App';
 
 function toSlug(text) {
     return text.toLowerCase()

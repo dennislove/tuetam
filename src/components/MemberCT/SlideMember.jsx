@@ -1,6 +1,5 @@
 import React, { useEffect, useState,useRef } from 'react';
 import '../MemberCT/style.css'
-import data from '../../assets/data.json'
 import { getDatabase, ref, child, get } from "firebase/database";
 
 function SlideMember() {
@@ -45,7 +44,7 @@ function SlideMember() {
         <div className='mb-5 text-center '>
         <h2 className=' font-normal md:text-[40px] font-oxa sm:text-[35px] pm:text-[30px] text-white capitalize'>Sản Phẩm Từ Trầm Hương</h2>
     </div>
-        <div className="fui-testimonial-1 mt-10">
+        <div className="fui-testimonial-1 md:mt-10 pm:mt-0">
             
         <div className="testimonialWrap">
             <ul className="testimonialBodyList text-white">

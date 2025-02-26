@@ -1,268 +1,150 @@
-{ 
-    "sidebar":[
-        {
-            "path":"/",
-            "id": 1,
-            "name": "Trang Chủ"
-        },
-        {
-            "path":"/gioi-thieu",
-            "id": 2,
-            "name": "Giới Thiệu"
-        },
-        {
-            "path":"/dich-vu",
-            "id": 3,
-            "name": "Dịch Vụ"
-        },
-        {
-            "path":"/don-vi",
-            "id": 4,
-            "name": "Đơn Vị"
-        },
-        {
-            "path":"/News",
-            "id": 5,
-            "name": "Tin Tức"
-        },
-        {
-            "path":"/lien-he",
-            "id": 6,
-            "name": "Liên Hệ"
-        }
-    ],
-    "customer":[
-        {
-            "imgSrc":"https://annhientramhuong.com/wp-content/uploads/2021/05/logo-tramhuongannhien.png",
-            "imgAlt":"thumbs",
-            "company":"An Nhiên Trầm Hương",
-            "location":"Đà Nẵng",
-            "jobs":"Nhân viên bán hàng",
-            "path":"https://tramhuongannhien.vn/",
-            "id": 1
-        },
-        {
-            "imgSrc":"https://static.ybox.vn/2022/2/2/1645521564530-logo.png",
-            "imgAlt":"thumbs",
-            "company":"Thiên Mộc Hương",
-            "location":"Đà Nẵng",
-            "jobs":"Nhân viên Marketing",
-            "path":"https://thienmochuong.com/",
-            "id": 2
-        },
-        {
-            "imgSrc":"https://lh3.googleusercontent.com/proxy/xW61lbc14RoVIHs3VP6qRW7aKEoMQFSwuNYhr2qOZtKY2qtanGfAHLYmkAEkusBzEJVrhnnNwumJ7ZYM6ig0y8rXXpQoKP8YA5ee0zYnSv81Tc-D6lVvsJYqso_Udi0vuZp2E4CnOAUq_MRHoSKPWw",
-            "imgAlt":"thumbs",
-            "company":"Trầm Hương Thuần Chay",
-            "location":"Hà Nội",
-            "jobs":"Nhân viên chế tạo",
-            "path":"https://tramhuongthuanchay.com/",
-            "id": 3
-        },
-        {
-            "imgSrc":"https://hoangtram.com.vn/Uploads/Banners/Banner-20200715145430.png",
-            "imgAlt":"thumbs",
-            "company":"Hoàng Trầm",
-            "location":"Hà Nội",
-            "jobs":"Nhân viên sản xuất",
-            "path":"https://hoangtram.com.vn/",
-            "id": 4
-        },
-        {
-            "imgSrc":"https://vatphamtramhuong.vn/wp-content/uploads/2021/06/logo-new-2.png",
-            "imgAlt":"thumbs",
-            "company":"Vật Phẩm Trầm Hương",
-            "location":"Hà Nội",
-            "jobs":"Nhân viên Marketing",
-            "path":"https://vatphamtramhuong.vn",
-            "id": 5
-        },
-        {
-            "imgSrc":"https://tramhuongkygia.com/wp-content/uploads/2021/07/logo_main_2.png",
-            "imgAlt":"thumbs",
-            "company":"Trầm Hương Kỳ Gia",
-            "location":"TP. Hồ Chí Minh",
-            "jobs":"Nhân viên sản xuất",
-            "path":"https://tramhuongkygia.com",
-            "id": 6
-        },
-        {
-            "imgSrc":"https://i0.wp.com/moctramhuong.vn/wp-content/uploads/2021/07/Logo_giua_mthJWR.png?fit=400%2C300&ssl=1",
-            "imgAlt":"thumbs",
-            "company":"Mộc Trầm Hương",
-            "location":"Nha Trang",
-            "jobs":"Nhân viên điều chế",
-            "path":"https://moctramhuong.vn/",
-            "id": 7
-        },
-        {
-            "imgSrc":"https://tramhuonghanoi.vn/images/logo.png",
-            "imgAlt":"thumbs",
-            "company":"Trầm Hương hà Nội",
-            "location":"Hà Nội",
-            "jobs":"Nhân viên đóng gói",
-            "path":"https://tramhuonghanoi.vn",
-            "id": 8
-        }
+{
+  "sidebar": [
+    {
+      "path": "/",
+      "id": 1,
+      "name": "Trang Chủ"
+    },
 
-    ],
-    "job":[
-        {
-            "quantity":130,
-            "jobs":"Nhân viên bán hàng"
-        },
-        {
-            "quantity":200,
-            "jobs":"Nhân viên chế tạo"
-        },
-        {
-            "quantity":120,
-            "jobs":"Nhân viên Marketing"
-        },
-        {
-            "quantity":230,
-            "jobs":"Nhân viên sản xuất"
-        },
-        {
-            "quantity":170,
-            "jobs":"Nhân viên điều chế"
-        },
-        {
-            "quantity":354,
-            "jobs":"Nhân viên đóng gói"
-        },
-        {
-            "quantity":260,
-            "jobs":"Nhân viên kiểm kho"
-        }
-    ],
-    "tourament":[
-        { 
-            "title": "CHÂN THÀNH",
-            "content": "https://tramhuongthientam.vn/uploads/posts/tram_huong_thi%C3%AAn_t%C3%A2m.jpg?1635499060936" 
-        },
-        { 
-            "title": "UY TÍN", 
-            "content": "https://lh4.googleusercontent.com/FGdFjcbESyLfu3nzrRdJnOvDr9ggyRqHW8XlZk49YpPJL_Z2VWLRF-8WuWOXPVG592J91LKcNVbkw095EoTlzjnchaZ4mDDZyhuM-grkKWFROIQiDN6W8gptdlgnwxrCcI9j9gofcWcMDz0I" 
-        },
-        { 
-            "title": "TẠO GIÁ TRỊ", 
-            "content": "https://vn-test-11.slatic.net/p/87520f129d574cc8db99282a650d511a.jpg" 
-        }
-        ,
-        { 
-            "title": "TẬN TÂM", 
-            "content": "https://tramhuongannhien.vn/wp-content/uploads/2023/07/nu-tram-huong-sach-tai-ho-chi-minh.jpg" 
-        }
-    ],
-    "imageMedia":[
-        {
-            "imgSrc":"https://cuahangnoithat.vn/sites/default/files/tu-van/1/tram-huong.png",
-            "imgAlt":"image1",
-            "id":1
-        },
-        {
-            "imgSrc":"https://cdn.tgdd.vn/Files/2022/06/04/1436888/cay-tram-huong-dac-diem-cong-dung-va-y-nghia-trong-doi-song-202206040903580434.jpg",
-            "imgAlt":"image2",
-            "id":2
-        },
-        {
-            "imgSrc":"https://quaquehuong.vn/wp-content/uploads/2023/03/Nu-tram-Dana-Tram-huong.jpg",
-            "imgAlt":"image3",
-            "id":3
-        },
-        {
-            "imgSrc":"https://hoiquanlacphuc.com/upload/images/z2770274270932_149fb00654d382b040f5fdb96b578500.jpg",
-            "imgAlt":"image4",
-            "id":4
-        },
-        {
-            "imgSrc":"https://bizweb.dktcdn.net/thumb/1024x1024/100/426/224/products/vong-8li.jpg?v=1663578347080",
-            "imgAlt":"image5",
-            "id":5
-        },
-        {
-            "imgSrc":"https://tramhuonghudo.com/uploads/08-2021/vongtaytho.jpg",
-            "imgAlt":"image6",
-            "id":6
-        },
-        {
-            "imgSrc":"https://tramhuonghudo.com/uploads/08-2021/z2680959760748_3643ac60078c5f4c5efb9d8de79036b9-249.jpg",
-            "imgAlt":"image7",
-            "id":7
-        }
-    ],
-    "tourmember":[
-        {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/230x100x2/upload/news/logo-2-01-6436.png",
-            "imgAlt":"tourmember_1",
-            "description":"Cái 'Tâm' làm nên tảng quan trọng trong việc kinh doanh nói chung trong nghề trầm hương nói riêng. Quan niệm rằng 'TÂM' càng rộng, càng vững mạnh vươn càng xa."
-        },
-        {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/230x100x2/upload/news/logo-2-01-6436.png",
-            "imgAlt":"tourmember_2",
-            "description":"Nội dung của giá trị cốt lõi"
-        },
-        {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/230x100x2/upload/news/logo-2-01-6436.png",
-            "imgAlt":"tourmember_3",
-            "description":"Nội dung của giá trị cốt lõi"
-        },
-        {
-            "imgSrc":"http://www.grandteambuilding.vn/thumbs/230x100x2/upload/news/logo-2-01-6436.png",
-            "imgAlt":"tourmember_4",
-            "description":"Nội dung của giá trị cốt lõi"
-        }
-    ],
-    "slider":[
-        {
-            "id":1,
-            "author":"TUETAM",
-            "member":"",
-            "title":"Thiên Mộc Hương",
-            "image":"https://thienmochuong.com/wp-content/uploads/2023/08/web-mobie.jpg",
-            "description":""
-        },
-        {
-            "id":2,
-            "author":"TUETAM",
-            "member":"VEGAN",
-            "title":"VEGAN",
-            "image":"https://tramhuongthuanchay.com/images/cua-hang-vegan-tram-huong.jpg",
-            "description":"Vegan là thương hiệu Trầm Hương sử dụng những ưu đãi tự nhiên nhiệt đới Việt Nam trong lành với thiên nhiên phát triển da dạng. Ngay từ khi thành lập cho đến nay, VEGAN Trầm Hương Thuần Chay luôn cố gắng mang đến cho người dùng những sản phẩm có chất lượng tốt nhất và đang càng ngày khẳng định được vị thế trong lòng người tiêu dùng, được nhiều khách hàng đánh giá là một trong những dòng Trầm Hương chất lượng trên thị trường hiện nay."
-        },
-        {
-            "id":3,
-            "author":"TUETAM",
-            "member":"Trầm Hương Thiên Tâm",
-            "title":"Trầm Hương Thiên Tâm",
-            "image":"https://tramhuongthientamhn.com/wp-content/uploads/2021/12/tram-huong-uy-tin-ha-noi-1-scaled.jpg",
-            "description":""
-        },
-        {
-            "id":4,
-            "author":"TUETAM",
-            "member":"",
-            "title":"Trầm Hương An Nhiên",
-            "image":"https://tramhuongannhien.vn/wp-content/uploads/2023/09/tram-huong-an-nhien-chuyen-cung-cap-cac-san-pham-tram-huong.jpg",
-            "description":""
-        }
-    ],   
-    "major":[
-        {
-            "title":"Tiếp thị nội dung và SEO",
-            "description":"Phát triển nội dung chuyên sâu về trầm hương, bao gồm bài viết, blog và video để cải thiện vị trí tìm kiếm trên internet và cung cấp thông tin giá trị cho khách hàng",
-            "path":""
-        },
-        {
-            "title":"Sự kiện và triển lãm",
-            "description":"Tham gia hoặc tổ chức các sự kiện và triển lãm chuyên ngành để giới thiệu sản phẩm trầm hương đến với các nhà bán lẻ, đối tác tiềm năng và khách hàng.",
-            "path":""
-        },
-        {
-            "title":"Hợp tác và đại sứ thương hiệu",
-            "description":"Hợp tác với những người có ảnh hưởng trong ngành như chuyên gia phong thủy, nhà thiền, hoặc các nhân vật nổi tiếng để mở rộng độ phủ sóng thương hiệu và tăng tính thuyết phục cho sản phẩm.",
-            "path":""
-        }
-    ]
+    {
+      "path": "/san-pham",
+      "id": 3,
+      "name": "Sản Phẩm"
+    },
+
+    {
+      "path": "/lien-he",
+      "id": 6,
+      "name": "Liên Hệ"
+    }
+  ],
+
+  "tourament": [
+    {
+      "title": "CHÂN THÀNH",
+      "content": "https://tramhuongthientam.vn/uploads/posts/tram_huong_thi%C3%AAn_t%C3%A2m.jpg?1635499060936"
+    },
+    {
+      "title": "UY TÍN",
+      "content": "https://lh4.googleusercontent.com/FGdFjcbESyLfu3nzrRdJnOvDr9ggyRqHW8XlZk49YpPJL_Z2VWLRF-8WuWOXPVG592J91LKcNVbkw095EoTlzjnchaZ4mDDZyhuM-grkKWFROIQiDN6W8gptdlgnwxrCcI9j9gofcWcMDz0I"
+    },
+    {
+      "title": "TẠO GIÁ TRỊ",
+      "content": "https://vn-test-11.slatic.net/p/87520f129d574cc8db99282a650d511a.jpg"
+    },
+    {
+      "title": "TẬN TÂM",
+      "content": "https://tramhuongannhien.vn/wp-content/uploads/2023/07/nu-tram-huong-sach-tai-ho-chi-minh.jpg"
+    }
+  ],
+  "imageMedia": [
+    {
+      "imgSrc": "https://cuahangnoithat.vn/sites/default/files/tu-van/1/tram-huong.png",
+      "imgAlt": "image1",
+      "id": 1
+    },
+    {
+      "imgSrc": "https://cdn.tgdd.vn/Files/2022/06/04/1436888/cay-tram-huong-dac-diem-cong-dung-va-y-nghia-trong-doi-song-202206040903580434.jpg",
+      "imgAlt": "image2",
+      "id": 2
+    },
+    {
+      "imgSrc": "https://quaquehuong.vn/wp-content/uploads/2023/03/Nu-tram-Dana-Tram-huong.jpg",
+      "imgAlt": "image3",
+      "id": 3
+    },
+    {
+      "imgSrc": "https://hoiquanlacphuc.com/upload/images/z2770274270932_149fb00654d382b040f5fdb96b578500.jpg",
+      "imgAlt": "image4",
+      "id": 4
+    },
+    {
+      "imgSrc": "https://bizweb.dktcdn.net/thumb/1024x1024/100/426/224/products/vong-8li.jpg?v=1663578347080",
+      "imgAlt": "image5",
+      "id": 5
+    },
+    {
+      "imgSrc": "https://tramhuonghudo.com/uploads/08-2021/vongtaytho.jpg",
+      "imgAlt": "image6",
+      "id": 6
+    },
+    {
+      "imgSrc": "https://tramhuonghudo.com/uploads/08-2021/z2680959760748_3643ac60078c5f4c5efb9d8de79036b9-249.jpg",
+      "imgAlt": "image7",
+      "id": 7
+    }
+  ],
+  "tourmember": [
+    {
+      "imgSrc": "http://www.grandteambuilding.vn/thumbs/230x100x2/upload/news/logo-2-01-6436.png",
+      "imgAlt": "tourmember_1",
+      "description": "Cái 'Tâm' làm nên tảng quan trọng trong việc kinh doanh nói chung trong nghề trầm hương nói riêng. Quan niệm rằng 'TÂM' càng rộng, càng vững mạnh vươn càng xa."
+    },
+    {
+      "imgSrc": "http://www.grandteambuilding.vn/thumbs/230x100x2/upload/news/logo-2-01-6436.png",
+      "imgAlt": "tourmember_2",
+      "description": "Nội dung của giá trị cốt lõi"
+    },
+    {
+      "imgSrc": "http://www.grandteambuilding.vn/thumbs/230x100x2/upload/news/logo-2-01-6436.png",
+      "imgAlt": "tourmember_3",
+      "description": "Nội dung của giá trị cốt lõi"
+    },
+    {
+      "imgSrc": "http://www.grandteambuilding.vn/thumbs/230x100x2/upload/news/logo-2-01-6436.png",
+      "imgAlt": "tourmember_4",
+      "description": "Nội dung của giá trị cốt lõi"
+    }
+  ],
+  "slider": [
+    {
+      "id": 1,
+      "author": "TUETAM",
+      "member": "",
+      "title": "Thiên Mộc Hương",
+      "image": "https://thienmochuong.com/wp-content/uploads/2023/08/web-mobie.jpg",
+      "description": ""
+    },
+    {
+      "id": 2,
+      "author": "TUETAM",
+      "member": "VEGAN",
+      "title": "VEGAN",
+      "image": "https://tramhuongthuanchay.com/images/cua-hang-vegan-tram-huong.jpg",
+      "description": "Vegan là thương hiệu Trầm Hương sử dụng những ưu đãi tự nhiên nhiệt đới Việt Nam trong lành với thiên nhiên phát triển da dạng. Ngay từ khi thành lập cho đến nay, VEGAN Trầm Hương Thuần Chay luôn cố gắng mang đến cho người dùng những sản phẩm có chất lượng tốt nhất và đang càng ngày khẳng định được vị thế trong lòng người tiêu dùng, được nhiều khách hàng đánh giá là một trong những dòng Trầm Hương chất lượng trên thị trường hiện nay."
+    },
+    {
+      "id": 3,
+      "author": "TUETAM",
+      "member": "Trầm Hương Thiên Tâm",
+      "title": "Trầm Hương Thiên Tâm",
+      "image": "https://tramhuongthientamhn.com/wp-content/uploads/2021/12/tram-huong-uy-tin-ha-noi-1-scaled.jpg",
+      "description": ""
+    },
+    {
+      "id": 4,
+      "author": "TUETAM",
+      "member": "",
+      "title": "Trầm Hương An Nhiên",
+      "image": "https://tramhuongannhien.vn/wp-content/uploads/2023/09/tram-huong-an-nhien-chuyen-cung-cap-cac-san-pham-tram-huong.jpg",
+      "description": ""
+    }
+  ],
+  "major": [
+    {
+      "title": "Tiếp thị nội dung và SEO",
+      "description": "Phát triển nội dung chuyên sâu về trầm hương, bao gồm bài viết, blog và video để cải thiện vị trí tìm kiếm trên internet và cung cấp thông tin giá trị cho khách hàng",
+      "path": ""
+    },
+    {
+      "title": "Sự kiện và triển lãm",
+      "description": "Tham gia hoặc tổ chức các sự kiện và triển lãm chuyên ngành để giới thiệu sản phẩm trầm hương đến với các nhà bán lẻ, đối tác tiềm năng và khách hàng.",
+      "path": ""
+    },
+    {
+      "title": "Hợp tác và đại sứ thương hiệu",
+      "description": "Hợp tác với những người có ảnh hưởng trong ngành như chuyên gia phong thủy, nhà thiền, hoặc các nhân vật nổi tiếng để mở rộng độ phủ sóng thương hiệu và tăng tính thuyết phục cho sản phẩm.",
+      "path": ""
+    }
+  ]
 }

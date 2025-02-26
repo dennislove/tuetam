@@ -1,39 +1,92 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import reviewimg from '../../images/reviewimg.png'
+import React from 'react';
 
 function InterviewComponent() {
   return (
-    <div className='max-w-[1300px] lg:m-auto md:mx-10 sm:mx-16 relative pb-20'>
-        <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-10'>
-            <img loading='lazy' src={reviewimg} alt="" />
-            <div className=' text-start flex flex-col gap-6 justify-center'>
-                <h4 className='text-yellow-600 font-bold text-3xl'>Trầm Hương Tuệ Tâm - Điểm đến tin cậy cho những tín đồ yêu mến trầm hương.</h4>
-                <h3 className='text-white leading-loose ' ><Link to='/' className='font-oxa text-yellow-600 underline'>Trầm Hương Tuệ Tâm </Link> là nền tảng trực tuyến hàng đầu, chuyên cung cấp các thông tin và quảng bá các địa chỉ mua bán trầm hương uy tín trên toàn quốc. Chúng tôi tự hào là cầu nối vững chắc giữa những người yêu thích và tìm kiếm sản phẩm trầm hương chất lượng cao với những nhà cung cấp đáng tin cậy.</h3>
-            </div>
-        </div>
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center p-6">
+      <div className="max-w-3xl bg-gray-800 shadow-lg rounded-lg p-8">
+        <img
+          src="./images/reviewimg.png"
+          alt="Vòng Tay Trầm Hương"
+          className="w-full h-64 object-cover rounded-md mb-6"
+        />
+        <h1 className="text-3xl font-bold text-center text-yellow-600 mb-6">
+          Vòng Tay Trầm Hương Charm – Trân Quý Từ Bên Trong, Tinh Tế Từ Bên
+          Ngoài
+        </h1>
+        <p className="text-white leading-relaxed mb-4">
+          Vòng tay trầm hương không chỉ là một món trang sức, mà còn là biểu
+          tượng của
+          <strong> bình an, may mắn và đẳng cấp</strong>. Được kết hợp giữa
+          <strong> trầm hương tự nhiên</strong> và{' '}
+          <strong> charm cao cấp</strong>, mỗi sản phẩm mang đến sự thanh lịch
+          và giá trị tâm linh sâu sắc.
+        </p>
 
-        <div className='mt-20'>
-            <h4 className='text-yellow-600 text-2xl'>Vì sao chọn dịch vụ Trầm Hương Tuệ Tâm?</h4>
+        <h2 className="text-2xl font-semibold text-yellow-600 mt-6 mb-4">
+          Vì sao vòng tay trầm hương charm được yêu thích?
+        </h2>
+        <ul className="list-disc list-inside text-white space-y-2">
+          <li>
+            <strong>Trầm hương thật 100%</strong> – Hương thơm dịu nhẹ, càng đeo
+            càng lên mùi theo thời gian.
+          </li>
+          <li>
+            <strong>Charm tinh xảo</strong> – Chế tác từ bạc 925, vàng 18K hoặc
+            đá quý, mang lại may mắn và vượng khí.
+          </li>
+          <li>
+            <strong>Hộp đựng sang trọng</strong> – Thiết kế đẳng cấp, thích hợp
+            làm quà tặng ý nghĩa.
+          </li>
+          <li>
+            <strong>Năng lượng tích cực</strong> – Giúp thư giãn, cân bằng tinh
+            thần và thu hút tài lộc.
+          </li>
+        </ul>
 
-           <div className='flex md:flex-row pm:flex-col  md:gap-10 pm:gap-5 mt-5'>
-              <div className='flex grow flex-col gap-10'>
-                  <p className='text-white'><strong className=' italic'>Uy tín và Chất lượng:</strong> Mỗi đối tác cung cấp trầm hương được chúng tôi kỹ lưỡng lựa chọn dựa trên những tiêu chuẩn khắt khe về chất lượng sản phẩm và độ tin cậy của doanh nghiệp.</p>
-                  <p className='text-white'><strong className=' italic'>Đa dạng sản phẩm:</strong> Tại Trầm Hương Tuệ Tâm, bạn có thể tìm thấy một loạt các sản phẩm trầm hương từ nhang trầm, tinh dầu trầm, đến các tác phẩm điêu khắc trầm hương tinh xảo từ các đối tác chất lượng và uy tín. Dù bạn là người mới bắt đầu hay một nhà sưu tập lâu năm, chúng tôi có đủ mọi thứ bạn cần.</p>
-              </div>
-              <div className='grow-0  '>
-                <div className='h-full w-[2px] bg-white'></div>
-              </div>
-               
-              <div  className='flex grow flex-col gap-10'>
-                  <p className='text-white'><strong className=' italic'>Thông tin đầy đủ và minh bạch:</strong> Chúng tôi cung cấp thông tin chi tiết về nguồn gốc, quy trình chế tác và những lợi ích thiết thực của từng sản phẩm trầm hương, giúp bạn đưa ra quyết định mua hàng một cách thông thái.</p>
-                  <p className='text-white'>Không chỉ là một trang web quảng cáo, Trầm Hương Tuệ Tâm còn là nơi quy tụ của cộng đồng những người yêu trầm hương. Chúng tôi tổ chức các sự kiện, hội thảo và chia sẻ kiến thức nhằm tạo dựng một môi trường học hỏi và chia sẻ kinh nghiệm giữa những người đam mê trầm hương.</p>
-              
-                </div>
-           </div>
+        <h2 className="text-2xl font-semibold text-yellow-600 mt-6 mb-4">
+          Sự trân trọng đến từ từng chi tiết
+        </h2>
+        <p className="text-white leading-relaxed">
+          Mỗi hạt trầm hương được chọn lọc kỹ lưỡng, từ vân gỗ đến mùi hương,
+          đảm bảo chất lượng hoàn hảo. Charm được chế tác tinh tế, mang đậm
+          phong cách cá nhân và ý nghĩa phong thủy. Không chỉ là một chiếc vòng
+          tay, đây còn là{' '}
+          <strong>
+            món quà của sự trân trọng, một sự lựa chọn đầy tinh tế dành cho bạn
+          </strong>
+          .
+        </p>
+
+        <div className="bg-gray-700 p-4 rounded-md mt-6">
+          <h2 className="text-xl font-semibold text-yellow-600 mb-2">
+            Lời cảm ơn
+          </h2>
+          <p className="text-white">
+            ✨{' '}
+            <strong>
+              Chân thành cảm ơn quý khách đã tin tưởng và lựa chọn sản phẩm của
+              chúng tôi!
+            </strong>{' '}
+            ✨
+          </p>
+          <p className="text-white mt-2">
+            Sự ủng hộ của quý khách là động lực để chúng tôi không ngừng mang
+            đến những sản phẩm chất lượng và dịch vụ tốt nhất. Mong rằng vòng
+            tay trầm hương charm sẽ luôn đồng hành và mang lại may mắn, bình an
+            cho quý khách.
+          </p>
+          <p className="text-white mt-2">
+            Nếu có bất kỳ thắc mắc hoặc cần hỗ trợ, đừng ngần ngại liên hệ với
+            chúng tôi. Chúc quý khách nhiều sức khỏe và niềm vui!
+          </p>
+          <p className="text-white font-semibold mt-4">
+            💖 Trân trọng, [Tên Thương Hiệu]
+          </p>
         </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default InterviewComponent
+export default InterviewComponent;

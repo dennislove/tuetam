@@ -7,18 +7,12 @@ const PageTitleManager = () => {
   const titleMap = {
     '/': 'Tuệ Tâm',
     '/gioi-thieu': 'TT | Giới Thiệu',
-    '/News': 'TT | Tin Tức',
-    '/News/:slug': 'TT | Tin Tức', // Đường dẫn này sử dụng tham số
-    '/dich-vu': 'TT | Dịch Vụ',
-    '/dich-vu/payment': 'TT | Thanh Toán',
-    '/dich-vu/ads': 'TT | Quảng Cáo',
-    '/don-vi': 'TT | Đơn Vị',
+
+    '/san-pham': 'TT | Sản Phẩm',
+
     '/lien-he': 'TT | Liên Hệ',
-    '/sign-in': 'TT | Đăng Nhập',
-    '/sign-up': 'TT | Đăng Ký',
-    '/admin/api/news': 'Admin || Tuệ Tâm',
-    '/admin/api/sign-in': 'Admin || Login',
-    '/admin/api/sign-up': 'Admin || Register',
+
+    '/admin/api/news': 'Admin || Tuệ Tâm'
   };
 
   useEffect(() => {
@@ -28,7 +22,10 @@ const PageTitleManager = () => {
       // Kiểm tra xem có khớp với bất kỳ đường dẫn nào trong titleMap không
       //'/dich-vu/ads' || '/dich-vu/payment'||
       for (let path in titleMap) {
-        const matcher = match(path, { decode: decodeURIComponent, end: path ===  '/News/:slug' ? false : true });
+        const matcher = match(path, {
+          decode: decodeURIComponent,
+          end: path === '/News/:slug' ? false : true
+        });
         if (matcher(location.pathname)) {
           title = titleMap[path];
           break;

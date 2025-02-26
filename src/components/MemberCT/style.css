@@ -312,8 +312,11 @@
     }
   }
   @media only screen and (max-width: 739px) {
+    .fui-testimonial-1{
+      margin-top: -10px;
+    }
     .fui-testimonial-1 .testimonialBodyPersonal {
-      margin-top: 30px;
+      margin-top: 0px;
     }
     .fui-testimonial-1 .testimonialRate {
       margin-bottom: 30px;
@@ -325,6 +328,7 @@
       font-size: 14px;
     }
     .fui-testimonial-1 .testimonialWrap {
+      margin-top: 0px;
       padding-bottom: 0;
     }
   }

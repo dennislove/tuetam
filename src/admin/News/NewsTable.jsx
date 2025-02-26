@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
-import { getDatabase, ref, child, get, set, remove  } from "firebase/database";
+import { getDatabase, ref, child, get, remove  } from "firebase/database";
 import FormAddNews from './FormAddNews';
 import ReactPaginate from 'react-paginate';
 
 function NewsTable() {
-
   const [showForm, setShowForm] = useState(false); // useState hook để lưu trữ trạng thái hiển thị (mặc định là false)
 
   const handleClick = () => {

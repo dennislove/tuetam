@@ -1,26 +1,27 @@
-import React from 'react'
-import data from '../../assets/data.json'
-import { Link } from 'react-router-dom'
-import ButtonOutLine from "../Button/ButtonOutLine.jsx"
+import React from 'react';
+import data from '../../assets/data.json';
+import ButtonOutLine from '../Button/ButtonOutLine.jsx';
 
 function Major() {
+  const major = data.major;
 
-    const major = data.major
-    
   return (
-    <div className='grid md:grid-cols-3 pm:grid-cols-1 sm:grid-cols-2 gap-2 '>
-       {major.map((item, index) =>(
+    <div className="grid md:grid-cols-3 pm:grid-cols-1 sm:grid-cols-2 gap-2 ">
+      {major.map((item, index) => (
+        <div
+          key={index}
+          className="bg-white p-4 hover:-translate-y-1 transform ease-linear duration-150 hover:shadow-[0px_4px_0px_3px_rgba(183,183,183,0.6)]"
+        >
+          <h2 className="text-yellow-600 text-xl font-semibold">
+            {item.title}
+          </h2>
+          <p className="my-3 text-16">{item.description}</p>
 
-        <div key={index} className='bg-white p-4 hover:-translate-y-1 transform ease-linear duration-150 hover:shadow-[0px_4px_0px_3px_rgba(183,183,183,0.6)]'>
-            <h2 className='text-yellow-600 text-xl font-semibold'>{item.title}</h2>
-            <p className='my-3 text-16'>{item.description}</p>
-
-            <ButtonOutLine name="Xem thêm"/>
-          
+          <ButtonOutLine name="Xem thêm" />
         </div>
-       ))}
+      ))}
     </div>
-  )
+  );
 }
 
-export default Major
+export default Major;

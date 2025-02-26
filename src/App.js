@@ -2,17 +2,18 @@ import React, { Fragment} from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {routes} from './routes'
 import DefautComponent from './components/DefautComponent/DefautComponent';
+
 import 'firebase/database';  // Nếu dùng Realtime Database
 import 'firebase/storage'; 
 import { getDatabase, ref,get, orderByChild, equalTo, set, push, serverTimestamp } from 'firebase/database';
 import { getAuth, GoogleAuthProvider, TwitterAuthProvider } from 'firebase/auth';
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
+import PageTitleManager from './routes/PageTitleManager';
+import {withAuthProtected, AuthProvider} from './admin/Account/ProtectedAuth'
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import PageTitleManager from './routes/PageTitleManager';
-import { AuthProvider, withAuthProtected } from './admin/Account/ProtectedAuth';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
