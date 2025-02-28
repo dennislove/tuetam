@@ -20,6 +20,10 @@ export default {
         pop: 'Poppins',
         inter: 'Inter'
       },
+      colors: {
+        primary: '#6F4E37',
+        secondary: '#FED8B1'
+      },
       clipPath: {
         'custom-polygon': 'polygon(70% 0, 100% 50%, 70% 100%, 0 100%, 0 0)'
       },

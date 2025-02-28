@@ -1,4 +1,5 @@
-import Project from '../pages/Project/Project';
+import Products from '../pages/Products';
+import ProductDetailPage from '../pages/Products/ProductDetailPage';
 import HomePage from '../pages/HomePage/HomePage';
 
 import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
@@ -19,10 +20,14 @@ export const routes = [
 
   {
     path: '/san-pham',
-    element: Project,
+    element: Products,
     isShowHeader: true
   },
-
+  {
+    path: '/chi-tiet-san-pham/:id',
+    element: ProductDetailPage,
+    isShowHeader: true
+  },
   {
     path: '/lien-he',
     element: ContactPage,

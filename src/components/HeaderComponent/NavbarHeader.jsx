@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { Link, useLocation } from 'react-router-dom';
 import data from '../../assets/data.json';
 import clsx from 'clsx';
-import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
 import { match } from 'path-to-regexp'; // Import match from path-to-regexp
 
@@ -23,13 +22,10 @@ const NavItem = ({ children, href, id }) => {
 
   return (
     <li
-      className="nav-item hover:text-yellow-600 md:text-base sm:text-sm "
+      className="nav-item hover:text-[#FED8B1] md:text-xl sm:text-base "
       key={id}
     >
-      <Link
-        to={href}
-        className={`nav-link ${isActive ? 'text-yellow-600' : ''}`}
-      >
+      <Link to={href} className={`nav-link ${isActive ? 'text-white ' : ''}`}>
         {children}
       </Link>
     </li>
@@ -46,41 +42,13 @@ const LoadingSpinner = () => (
 function NavbarHeader() {
   const [isSideMenuOpen, setMenu] = useState(false);
   const headerList = data.sidebar;
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const [loading, setLoading] = useState(false);
-  const auth = getAuth();
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setIsLoggedIn(true); // User is signed in.
-      } else {
-        setIsLoggedIn(false); // User is signed out.
-      }
-    });
-
-    return () => unsubscribe(); // Clean up the subscription on unmount
-  }, []);
-
-  const handleLogout = () => {
-    setLoading(true);
-    signOut(auth)
-      .then(() => {
-        console.log('User logged out successfully');
-        setIsLoggedIn(false); // Update state to reflect that user is no longer logged in
-        setTimeout(() => {
-          setLoading(false);
-        }, 2000);
-      })
-      .catch((error) => {
-        console.error('Logout failed:', error);
-        setLoading(false);
-      });
-  };
   return (
     <main className="shadow-md w-full top-0 left-0 relative">
       {loading && <LoadingSpinner />}
-      <nav className="md:h-20 sm:h-16 pm:h-16 bg-black lg:px-[120px]  pm:px-5 ">
+      <nav className="md:h-20 sm:h-16 pm:h-16 bg-[#A67B5B] text-secondary lg:px-[120px]  pm:px-5 ">
         <section className="flex items-center justify-between">
           {/* menu */}
           <button className="md:hidden" onClick={() => setMenu(true)}>
@@ -88,7 +56,7 @@ function NavbarHeader() {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="w-8 h-8 text-yellow-600 "
+              className="w-8 h-8 text-white "
             >
               <path
                 fillRule="evenodd"
@@ -107,7 +75,7 @@ function NavbarHeader() {
             />
           </a>
 
-          <ul className=" text-white items-center justify-center lg:gap-14 md:gap-10 sm:gap-6 hidden md:flex">
+          <ul className=" text-black items-center justify-center lg:gap-14 md:gap-10 sm:gap-6 hidden md:flex">
             {headerList.map((item) => (
               <NavItem key={item.id} href={item.path}>
                 {item.name}
@@ -127,13 +95,13 @@ function NavbarHeader() {
           <section className="text-black bg-white flex-col absolute left-0 top-0 h-screen p-8 gap-8 z-[50] pm:w-[65%] flex  ">
             <div
               onClick={() => setMenu(false)}
-              className="absolute right-1 top-1 p-1 bg-yellow-600  cursor-pointer"
+              className="absolute right-1 top-1 p-1 bg-primary   cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-8 h-8 "
+                className="w-8 h-8 text-white"
               >
                 <path
                   fillRule="evenodd"
@@ -151,7 +119,10 @@ function NavbarHeader() {
             />
             <ul className="mt-2">
               {headerList.map((item) => (
-                <li key={item.id} className=" w-full  uppercase cursor-pointer">
+                <li
+                  key={item.id}
+                  className=" w-full text-xl uppercase cursor-pointer"
+                >
                   <Link
                     to={item.path}
                     className=" items-center py-3 block border-b border-[#f2f2f2]"
