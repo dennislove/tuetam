@@ -1,7 +1,7 @@
 import Products from '../pages/Products';
 import ProductDetailPage from '../pages/Products/ProductDetailPage';
 import HomePage from '../pages/HomePage/HomePage';
-
+import WarrantyGuide from '../pages/WarrantyGuide';
 import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 
 import ContactPage from '../pages/ContactCT/ContactPage';
@@ -24,6 +24,11 @@ export const routes = [
     isShowHeader: true
   },
   {
+    path: '/hinh-anh',
+    element: Products,
+    isShowHeader: true
+  },
+  {
     path: '/chi-tiet-san-pham/:id',
     element: ProductDetailPage,
     isShowHeader: true
@@ -33,7 +38,11 @@ export const routes = [
     element: ContactPage,
     isShowHeader: true
   },
-
+  {
+    path: '/chinh-sach-bao-hanh',
+    element: WarrantyGuide,
+    isShowHeader: true
+  },
   {
     path: '*',
     title: '404',

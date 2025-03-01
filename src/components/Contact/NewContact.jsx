@@ -82,17 +82,17 @@ function NewContact() {
   };
 
   return (
-    <div className=" bg-[#000022] pt-10 ">
-      <div className=" max-w-[1300px] lg:m-auto  pm:mx-10 relative">
+    <div className="  py-10 ">
+      <div className=" max-w-[1300px] lg:m-auto  pm:mx-10 relative ">
         <div className="relative text-center ">
           <div className="mb-5 text-center ">
-            <h2 className=" font-oxa font-normal text-[40px] text-white capitalize">
+            <h2 className=" font-oxa font-semibold text-[50px] text-primary capitalize">
               Liên Hệ Chúng tôi
             </h2>
           </div>
         </div>
-        <div className="grid md:grid-cols-2 pm:grid-cols-1 gap-10">
-          <div className="border p-5">
+        <div className="grid md:grid-cols-2 pm:grid-cols-1 gap-10 p-2  border-primary border-2 rounded-lg">
+          <div className="border p-5 rounded-lg bg-[#F1F0E9]">
             <form ref={form} onSubmit={sendEmail}>
               <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-2 pm:grid-cols-1 gap-5">
                 {inputs.map((input) => (
@@ -109,11 +109,11 @@ function NewContact() {
               <div>
                 <div
                   className={`w-full border ${
-                    error ? 'border-red-500' : 'border-[#cbd5e1]'
+                    error ? 'border-red-500' : 'border-[#443627]'
                   } rounded-xl focus:text-white focus:border-yellow-600 mt-5`}
                 >
                   <textarea
-                    className="w-full h-40 bg-transparent border-none border-0 text-yellow-50 py-4 px-6  rounded-xl focus:text-white focus:outline-none"
+                    className="w-full h-40 bg-transparent border-none border-0 text-black py-4 px-6  rounded-xl focus:text-[#443627] focus:outline-none"
                     placeholder="Nội dung"
                     name="message"
                   ></textarea>

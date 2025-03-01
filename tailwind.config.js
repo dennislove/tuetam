@@ -16,7 +16,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        oxa: 'SVN-Hemi Head',
+        oxa: 'Moon Dance',
         pop: 'Poppins',
         inter: 'Inter'
       },

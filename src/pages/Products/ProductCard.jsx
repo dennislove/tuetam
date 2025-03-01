@@ -1,9 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Link } from 'react-router-dom';
-export default function ProductCard({ tensp, id, giahientai }) {
+
+import { useNavigate } from 'react-router-dom';
+export default function ProductCard({ ...product }) {
   const discount = 10;
-  const discountedPrice = giahientai - (giahientai * discount) / 100;
+  const discountedPrice =
+    product.giahientai - (product.giahientai * discount) / 100;
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/chi-tiet-san-pham/${product.id}`, {
+      state: { product }
+    });
+  };
 
   return (
     <div className="">
@@ -21,28 +30,25 @@ export default function ProductCard({ tensp, id, giahientai }) {
         />
         <div className="p-4">
           {/* Tên và giá sản phẩm */}
-          <h2 className="text-xl font-semibold font-pop">{tensp}</h2>
-          <p className="text-lg font-bold text-red-500">
+          <h2 className="text-xl font-semibold font-pop">{product.tensp}</h2>
+          {/* <p className="text-lg font-bold text-red-500">
             {discountedPrice.toLocaleString('vi-VN', {
               style: 'currency',
               currency: 'VND'
             })}
-          </p>
-          <p className="text-sm text-gray-500 line-through">
-            {giahientai.toLocaleString('vi-VN', {
-              style: 'currency',
-              currency: 'VND'
-            })}
-          </p>
+          </p> */}
+          {/* <p className="text-sm text-gray-500 line-through">
+            {product.giahientai.toLocaleString()}
+          </p> */}
 
           {/* Nút hành động */}
           <div className="mt-4 space-y-2">
-            <Link
-              to={`/chi-tiet-san-pham/${id}`}
+            <div
+              onClick={handleClick}
               className="w-full flex items-center justify-center gap-2 border py-2 rounded text-gray-700 hover:bg-gray-200"
             >
               ℹ️ Xem Chi Tiết
-            </Link>
+            </div>
             <div className="flex items-center justify-center gap-2">
               <a
                 target="blank"

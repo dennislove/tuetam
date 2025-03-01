@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 import React from 'react';
 
 function ContactMap() {
   return (
-    <div className="border p-5 ">
+    <div className="border p-5 rounded-lg bg-[#443627]">
       <div className="flex flex-col gap-6 mt-6">
         <div className="text-yellow-600 text-center">
           <h3 className="font-oxa font-bold text-3xl">TRẦM HƯƠNG TUỆ TÂM</h3>

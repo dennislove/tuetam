@@ -1,14 +1,13 @@
-import React from 'react'
-import Footer from '../../components/Footer/Footer'
-import NewContact from '../../components/Contact/NewContact'
+import React from 'react';
+
+import NewContact from '../../components/Contact/NewContact';
 
 function ContactPage() {
   return (
-    <div className='relative'>
-      <NewContact/>
-      <Footer/>
+    <div className="relative">
+      <NewContact />
     </div>
-  )
+  );
 }
 
-export default ContactPage
+export default ContactPage;

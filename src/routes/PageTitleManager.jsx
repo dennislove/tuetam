@@ -9,22 +9,21 @@ const PageTitleManager = () => {
     '/gioi-thieu': 'TT | Giới Thiệu',
 
     '/san-pham': 'TT | Sản Phẩm',
+    '/chi-tiet-san-pham/:id': 'TT | Chi Tiết Sản Phẩm',
 
     '/lien-he': 'TT | Liên Hệ',
+    '/chinh-sach-bao-hanh': 'TT | Chính Sách Bảo Hành',
+    '/hinh-anh': 'TT | Hình Ảnh',
 
     '/admin/api/news': 'Admin || Tuệ Tâm'
   };
 
   useEffect(() => {
     const updateTitle = () => {
-      let title = '404'; // Tiêu đề mặc định khi không khớp bất kỳ đường dẫn nào
-
-      // Kiểm tra xem có khớp với bất kỳ đường dẫn nào trong titleMap không
-      //'/dich-vu/ads' || '/dich-vu/payment'||
+      let title = '404';
       for (let path in titleMap) {
         const matcher = match(path, {
-          decode: decodeURIComponent,
-          end: path === '/News/:slug' ? false : true
+          decode: decodeURIComponent
         });
         if (matcher(location.pathname)) {
           title = titleMap[path];

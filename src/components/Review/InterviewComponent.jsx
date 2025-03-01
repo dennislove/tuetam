@@ -18,8 +18,8 @@ function InterviewComponent() {
           tượng của
           <strong> bình an, may mắn và đẳng cấp</strong>. Được kết hợp giữa
           <strong> trầm hương tự nhiên</strong> và{' '}
-          <strong> charm cao cấp</strong>, mỗi sản phẩm mang đến sự thanh lịch
-          và giá trị tâm linh sâu sắc.
+          <strong> charm đá nhiều mẫu mã</strong>, mỗi sản phẩm mang đến sự
+          thanh lịch và giá trị tâm linh sâu sắc.
         </p>
 
         <h2 className="text-2xl font-semibold text-yellow-600 mt-6 mb-4">
@@ -31,8 +31,8 @@ function InterviewComponent() {
             càng lên mùi theo thời gian.
           </li>
           <li>
-            <strong>Charm tinh xảo</strong> – Chế tác từ bạc 925, vàng 18K hoặc
-            đá quý, mang lại may mắn và vượng khí.
+            <strong>Charm tinh xảo</strong> – Chế tác từ đá mang lại may mắn và
+            vượng khí.
           </li>
           <li>
             <strong>Hộp đựng sang trọng</strong> – Thiết kế đẳng cấp, thích hợp
@@ -81,7 +81,7 @@ function InterviewComponent() {
             chúng tôi. Chúc quý khách nhiều sức khỏe và niềm vui!
           </p>
           <p className="text-black font-semibold mt-4">
-            💖 Trân trọng, [Tên Thương Hiệu]
+            💖 Trân trọng, Trầm Hương Tuệ Tâm
           </p>
         </div>
       </div>

@@ -5,16 +5,19 @@
       "id": 1,
       "name": "Trang Chủ"
     },
-
     {
       "path": "/san-pham",
-      "id": 3,
+      "id": 2,
       "name": "Sản Phẩm"
     },
-
+    {
+      "path": "/hinh-anh",
+      "id": 3,
+      "name": "Hình Ảnh"
+    },
     {
       "path": "/lien-he",
-      "id": 6,
+      "id": 4,
       "name": "Liên Hệ"
     }
   ],
