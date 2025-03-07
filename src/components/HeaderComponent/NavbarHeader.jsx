@@ -1,24 +1,14 @@
 import React, { useState } from 'react';
 
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useMatch } from 'react-router-dom';
 import data from '../../assets/data.json';
 import clsx from 'clsx';
 
-import { match } from 'path-to-regexp'; // Import match from path-to-regexp
-
 const NavItem = ({ children, href, id }) => {
   const location = useLocation();
-  const rootPath = location.pathname === '/';
 
-  let isActive;
-  if (href === '/') {
-    // Chỉ khi đường dẫn là root '/'
-    isActive = rootPath;
-  } else {
-    // Đối với tất cả đường dẫn khác, đảm bảo không khớp với root '/'
-    const matcher = match(href, { decode: decodeURIComponent, end: false });
-    isActive = matcher(location.pathname) && !rootPath;
-  }
+  const isActive =
+    useMatch(href) || (href === '/' && location.pathname === '/');
 
   return (
     <li
@@ -28,6 +18,7 @@ const NavItem = ({ children, href, id }) => {
       <Link
         to={href}
         className={`nav-link ${isActive ? 'text-white font-bold ' : ''}`}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
         {children}
       </Link>

@@ -2,16 +2,22 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const images = [
-  './images/banner_1.avif',
-  './images/banner_2.avif',
-  './images/banner_3.avif',
-  './images/banner_4.avif'
+  './images/products/4la_kim_nam.png',
+  './images/products/4la_moc_tuitien.png',
+  './images/products/4la_moc.png',
+  './images/products/108 hat 8 li.png',
+  './images/products/hoasen_moc.png',
+  './images/products/moc_trungnien.png',
+  './images/products/ngudieu_kim.png',
+  './images/products/ngudieu_moc.png',
+  './images/products/ngudieu_thuy.png',
+  './images/products/product_1.png'
 ];
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <div className="min-h-screen bg-green-50 p-6 flex flex-col items-center">
+    <div className="min-h-screen max-w-7xl mx-auto  p-6 flex flex-col items-center">
       <h2 className=" font-oxa font-semibold text-[50px] text-primary capitalize">
         Bộ Sưu tập
       </h2>
@@ -21,7 +27,8 @@ export default function Gallery() {
             key={index}
             src={src}
             alt={`Gallery ${index}`}
-            className="rounded-lg shadow-lg cursor-pointer hover:opacity-80"
+            loading="lazy"
+            className="rounded-3xl shadow-lg cursor-pointer hover:opacity-80"
             whileHover={{ scale: 1.05 }}
             onClick={() => setSelectedImage(src)}
           />

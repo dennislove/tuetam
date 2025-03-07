@@ -19,12 +19,14 @@ export default function Footer() {
         <div className="mt-6 flex justify-center gap-4">
           <Link
             to={'/chinh-sach-bao-hanh'}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full shadow"
           >
             👀 HDSD - Bảo Hành
           </Link>
           <Link
             to={'/lien-he'}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full shadow"
           >
             🌼 Liên Hệ

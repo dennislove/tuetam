@@ -11,6 +11,7 @@ import { withAuthProtected } from '../admin/Account/ProtectedAuth';
 
 import Manager from '../admin/DefautComponent/Manager';
 import Gallery from '../pages/Gallery';
+import ManageProduct from '../admin/Products/ManageProduct';
 
 export const routes = [
   {
@@ -50,9 +51,9 @@ export const routes = [
     element: NotFoundPage
   },
   {
-    path: 'admin/api/news',
-    element: withAuthProtected(DefauComponent),
-    protected: true
+    path: 'admin/api/products',
+    element: ManageProduct,
+    isShowHeader: false
   },
   {
     path: 'admin/api/manage-account',

@@ -6,6 +6,7 @@ function InterviewComponent() {
       <div className="max-w-7xl bg-secondary shadow-lg rounded-lg p-8">
         <img
           src="./images/cover.svg"
+          loading="lazy"
           alt="Vòng Tay Trầm Hương"
           className="w-full  object-cover rounded-md mb-6"
         />
@@ -13,7 +14,7 @@ function InterviewComponent() {
           Vòng Tay Trầm Hương Mix Charm – Trân Quý Từ Bên Trong, Tinh Tế Từ Bên
           Ngoài
         </h1>
-        <p className="text-black leading-relaxed mb-4">
+        <p className="text-black leading-relaxed mb-4 text-[18px]">
           Vòng tay trầm hương không chỉ là một món trang sức, mà còn là biểu
           tượng của
           <strong> bình an, may mắn và đẳng cấp</strong>. Được kết hợp giữa
@@ -25,7 +26,7 @@ function InterviewComponent() {
         <h2 className="text-2xl font-semibold text-yellow-600 mt-6 mb-4 font-pop">
           Vì sao vòng tay trầm hương charm được yêu thích?
         </h2>
-        <ul className="list-disc list-inside text-black space-y-2">
+        <ul className="list-disc list-inside text-black space-y-2 text-[18px]">
           <li>
             <strong>Trầm hương thật 100%</strong> – Hương thơm dịu nhẹ, càng đeo
             càng lên mùi theo thời gian.
@@ -47,7 +48,7 @@ function InterviewComponent() {
         <h2 className="text-2xl font-semibold text-yellow-600 mt-6 mb-4 font-pop">
           Sự trân trọng đến từ từng chi tiết
         </h2>
-        <p className="text-black leading-relaxed">
+        <p className="text-black leading-relaxed text-[18px]">
           Mỗi hạt trầm hương được chọn lọc kỹ lưỡng, từ vân gỗ đến mùi hương,
           đảm bảo chất lượng hoàn hảo. Charm được chế tác tinh tế, mang đậm
           phong cách cá nhân và ý nghĩa phong thủy. Không chỉ là một chiếc vòng
