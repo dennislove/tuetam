@@ -10,6 +10,7 @@ import DefauComponent from '../admin/DefautComponent/DefautComponent';
 import { withAuthProtected } from '../admin/Account/ProtectedAuth';
 
 import Manager from '../admin/DefautComponent/Manager';
+import Gallery from '../pages/Gallery';
 
 export const routes = [
   {
@@ -25,7 +26,7 @@ export const routes = [
   },
   {
     path: '/hinh-anh',
-    element: Products,
+    element: Gallery,
     isShowHeader: true
   },
   {

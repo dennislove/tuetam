@@ -2,50 +2,44 @@
 import React from 'react';
 
 import { useNavigate } from 'react-router-dom';
-export default function ProductCard({ ...product }) {
-  const discount = 10;
-  const discountedPrice =
-    product.giahientai - (product.giahientai * discount) / 100;
+export default function ProductCard({ id, tensp, giaban, image }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/chi-tiet-san-pham/${product.id}`, {
-      state: { product }
+    navigate(`/chi-tiet-san-pham/${id}`, {
+      state: { id, tensp, giaban, image }
     });
   };
 
   return (
-    <div className="">
-      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden">
+    <div className="" onClick={handleClick}>
+      <div className="relative group bg-white rounded-2xl shadow-lg overflow-hidden">
         {/* Thẻ giảm giá góc ảnh */}
-        <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
+        {/* <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
           Giảm {discount}%
-        </span>
+        </span> */}
 
         {/* Hình ảnh sản phẩm */}
         <img
-          src="./images/logo.png"
+          src="./images/products/product_1.png"
           alt="Sản phẩm"
-          className="w-full h-56 object-cover"
+          className="w-full bg-cover  object-cover group-hover:scale-110 transform duration-200"
         />
         <div className="p-4">
           {/* Tên và giá sản phẩm */}
-          <h2 className="text-xl font-semibold font-pop">{product.tensp}</h2>
-          {/* <p className="text-lg font-bold text-red-500">
-            {discountedPrice.toLocaleString('vi-VN', {
+          <h2 className="text-xl font-semibold font-rob">{tensp}</h2>
+          <p className="text-lg font-bold text-red-500">
+            {giaban.toLocaleString('vi-VN', {
               style: 'currency',
               currency: 'VND'
             })}
-          </p> */}
-          {/* <p className="text-sm text-gray-500 line-through">
-            {product.giahientai.toLocaleString()}
-          </p> */}
+          </p>
 
           {/* Nút hành động */}
           <div className="mt-4 space-y-2">
             <div
               onClick={handleClick}
-              className="w-full flex items-center justify-center gap-2 border py-2 rounded text-gray-700 hover:bg-gray-200"
+              className="w-full cursor-pointer hover:border flex items-center justify-center gap-2 border py-2 rounded text-gray-700 hover:bg-gray-200"
             >
               ℹ️ Xem Chi Tiết
             </div>

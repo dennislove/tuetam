@@ -1,24 +1,18 @@
 import { useLocation } from 'react-router-dom';
 export default function ProductDetailPage() {
   const location = useLocation();
-  const product = location.state; // Nhận dữ liệu từ ProductCard
+  const { id, tensp, giaban, image } = location.state || {};
 
-  if (!product) {
+  if (!id) {
     return <p className="text-center text-red-500">Sản phẩm không tồn tại!</p>;
   }
-  const discount = 10;
-  const discountedPrice =
-    product.giahientai - (product.giahientai * discount) / 100;
+
   return (
     <>
       <div className="container mx-auto p-4 grid md:grid-cols-2 gap-6 bg-white shadow-lg rounded-lg">
         {/* Hình ảnh sản phẩm */}
         <div className="flex flex-col items-center">
-          {/* <img
-            src={product.images[0]}
-            alt="Sản phẩm"
-            className="w-full h-80 object-cover"
-          /> */}
+          <img src={image} alt="Sản phẩm" className="w-2/3 object-cover" />
           {/* <div className="flex gap-2 mt-4">
             {product.images.map((img, index) => (
               <img
@@ -33,18 +27,12 @@ export default function ProductDetailPage() {
 
         {/* Chi tiết sản phẩm */}
         <div>
-          <h1 className="text-2xl font-semibold">{product.tensp}</h1>
+          <h1 className="text-2xl font-semibold font-rob">{tensp}</h1>
 
           {/* Giá sản phẩm */}
           <div className="mt-4">
             <span className="text-red-500 text-2xl font-bold">
-              đ{discountedPrice.toLocaleString()}
-            </span>
-            <span className="text-gray-500 line-through ml-2">
-              {product.giahientai.toLocaleString()} VNĐ
-            </span>
-            <span className="bg-red-500 text-white text-sm px-2 py-1 rounded ml-2">
-              -{discount}%
+              đ{giaban.toLocaleString()}
             </span>
           </div>
 

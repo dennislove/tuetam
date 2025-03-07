@@ -22,10 +22,13 @@ const NavItem = ({ children, href, id }) => {
 
   return (
     <li
-      className="nav-item hover:text-[#FED8B1] md:text-[18px] sm:text-base "
+      className="nav-item hover:text-[#FED8B1] md:text-[18px] sm:text-base font-rob"
       key={id}
     >
-      <Link to={href} className={`nav-link ${isActive ? 'text-white ' : ''}`}>
+      <Link
+        to={href}
+        className={`nav-link ${isActive ? 'text-white font-bold ' : ''}`}
+      >
         {children}
       </Link>
     </li>

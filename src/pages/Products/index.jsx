@@ -11,9 +11,15 @@ export default function Products() {
       <h2 className=" text-center font-oxa font-semibold mt-14 mb-4 text-[50px] text-primary capitalize">
         Danh Sách Sản Phẩm
       </h2>
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2 gap-4">
         {products.map((product, index) => (
-          <ProductCard key={index} {...product} />
+          <ProductCard
+            key={index}
+            tensp={product.TenSanPham}
+            giaban={product.GiaBanHienTai}
+            image={product.LinkHinhAnh}
+            id={product.STT}
+          />
         ))}
       </div>
     </div>

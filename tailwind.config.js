@@ -18,7 +18,8 @@ export default {
       fontFamily: {
         oxa: 'Moon Dance',
         pop: 'Poppins',
-        inter: 'Inter'
+        inter: 'Inter',
+        rob: 'Roboto'
       },
       colors: {
         primary: '#6F4E37',

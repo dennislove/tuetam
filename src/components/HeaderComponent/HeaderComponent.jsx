@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import NavbarHeader from './NavbarHeader';
 
-  
 function HeaderComponent() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -18,14 +17,21 @@ function HeaderComponent() {
   }, []);
 
   return (
-   <div>
-    <div className=''><NavbarHeader/></div>
-    <div className={`fixed w-full top-0 z-100 transform ease-linear duration-700 animate-slideIn ${
-        !isVisible && 'hidden' 
-      }`}><NavbarHeader/></div>
-
-   </div>
+    <div>
+      <div className="">
+        <NavbarHeader />
+      </div>
+      <div
+        className={`fixed w-full top-0 z-100 transform duration-300 ${
+          isVisible
+            ? 'translate-y-0 opacity-100'
+            : '-translate-y-full opacity-0'
+        } ${!isVisible && 'hidden'}`}
+      >
+        <NavbarHeader />
+      </div>
+    </div>
   );
 }
 
-export default HeaderComponent
+export default HeaderComponent;

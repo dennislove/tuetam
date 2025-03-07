@@ -9,7 +9,7 @@ function InterviewComponent() {
           alt="Vòng Tay Trầm Hương"
           className="w-full  object-cover rounded-md mb-6"
         />
-        <h1 className="text-3xl font-bold text-center text-yellow-600 mb-6">
+        <h1 className="text-3xl font-bold text-center text-yellow-600 mb-6 font-pop">
           Vòng Tay Trầm Hương Mix Charm – Trân Quý Từ Bên Trong, Tinh Tế Từ Bên
           Ngoài
         </h1>
@@ -22,7 +22,7 @@ function InterviewComponent() {
           thanh lịch và giá trị tâm linh sâu sắc.
         </p>
 
-        <h2 className="text-2xl font-semibold text-yellow-600 mt-6 mb-4">
+        <h2 className="text-2xl font-semibold text-yellow-600 mt-6 mb-4 font-pop">
           Vì sao vòng tay trầm hương charm được yêu thích?
         </h2>
         <ul className="list-disc list-inside text-black space-y-2">
@@ -44,7 +44,7 @@ function InterviewComponent() {
           </li>
         </ul>
 
-        <h2 className="text-2xl font-semibold text-yellow-600 mt-6 mb-4">
+        <h2 className="text-2xl font-semibold text-yellow-600 mt-6 mb-4 font-pop">
           Sự trân trọng đến từ từng chi tiết
         </h2>
         <p className="text-black leading-relaxed">
@@ -59,7 +59,7 @@ function InterviewComponent() {
         </p>
 
         <div className="bg-secondary p-4 rounded-md mt-6">
-          <h2 className="text-xl font-semibold text-yellow-600 mb-2">
+          <h2 className="text-2xl font-semibold text-yellow-600 mb-2 font-pop">
             Lời cảm ơn
           </h2>
           <p className="text-black">
