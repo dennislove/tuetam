@@ -5,17 +5,15 @@ import { match } from 'path-to-regexp';
 const PageTitleManager = () => {
   const location = useLocation();
   const titleMap = {
-    '/': 'Tuệ Tâm',
-    '/gioi-thieu': 'TT | Giới Thiệu',
+    '/': 'Trầm Hương Tuệ Tâm',
+    '/gioi-thieu': 'THTT | Giới Thiệu',
 
-    '/san-pham': 'TT | Sản Phẩm',
-    '/chi-tiet-san-pham/:id': 'TT | Chi Tiết Sản Phẩm',
+    '/san-pham': 'THTT | Sản Phẩm',
+    '/chi-tiet-san-pham/:id': 'THTT | Chi Tiết Sản Phẩm',
 
-    '/lien-he': 'TT | Liên Hệ',
-    '/chinh-sach-bao-hanh': 'TT | Chính Sách Bảo Hành',
-    '/hinh-anh': 'TT | Hình Ảnh',
-
-    '/admin/api/news': 'Admin || Tuệ Tâm'
+    '/lien-he': 'THTT | Liên Hệ',
+    '/chinh-sach-bao-hanh': 'THTT | Chính Sách Bảo Hành',
+    '/hinh-anh': 'THTT | Hình Ảnh'
   };
 
   useEffect(() => {

@@ -1,6 +1,8 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 const images = [
   './images/products/4la_kim_nam.png',
   './images/products/4la_moc_tuitien.png',
@@ -14,8 +16,18 @@ const images = [
   './images/products/product_1.png'
 ];
 export default function Gallery() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [loadedImages, setLoadedImages] = useState(
+    new Array(images.length).fill(false)
+  );
 
+  // Xử lý khi ảnh tải xong
+  const handleImageLoad = (index) => {
+    setLoadedImages((prev) => {
+      const newLoaded = [...prev];
+      newLoaded[index] = true;
+      return newLoaded;
+    });
+  };
   return (
     <div className="min-h-screen max-w-7xl mx-auto  p-6 flex flex-col items-center">
       <h2 className=" font-oxa font-semibold text-[50px] text-primary capitalize">
@@ -23,31 +35,31 @@ export default function Gallery() {
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
         {images.map((src, index) => (
-          <motion.img
-            key={index}
-            src={src}
-            alt={`Gallery ${index}`}
-            loading="lazy"
-            className="rounded-3xl shadow-lg cursor-pointer hover:opacity-80"
-            whileHover={{ scale: 1.05 }}
-            onClick={() => setSelectedImage(src)}
-          />
+          <div key={index} className="relative w-full">
+            {/* Skeleton hiển thị khi ảnh chưa tải xong */}
+            {!loadedImages[index] && <SkeletonGallery />}
+
+            <motion.img
+              src={src}
+              alt={`Gallery ${index}`}
+              loading="lazy"
+              className={`rounded-3xl shadow-lg hover:opacity-80 w-full h-full object-cover ${
+                loadedImages[index] ? 'block' : 'hidden'
+              }`}
+              whileHover={{ scale: 1.05 }}
+              onLoad={() => handleImageLoad(index)} // Ẩn Skeleton khi ảnh tải xong
+            />
+          </div>
         ))}
       </div>
-      {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center"
-          onClick={() => setSelectedImage(null)}
-        >
-          <motion.img
-            src={selectedImage}
-            alt="Selected"
-            className="max-w-full max-h-full rounded-lg shadow-2xl"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-          />
-        </div>
-      )}
     </div>
   );
 }
+const SkeletonGallery = () => (
+  <Skeleton
+    height={'100%'}
+    width={'100%'}
+    borderRadius={'1.5rem'}
+    className="shadow-lg"
+  />
+);

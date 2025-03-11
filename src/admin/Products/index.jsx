@@ -14,7 +14,13 @@ import {
 function ProductAdmin() {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
-  const [images, setImages] = useState({ image_1: null, image_2: null });
+  const [images, setImages] = useState({
+    image_1: null,
+    image_2: null,
+    image_3: null,
+    image_4: null,
+    image_5: null
+  });
 
   const handleImageUpload = (event, key) => {
     if (event.target.files[0]) {
@@ -26,7 +32,7 @@ function ProductAdmin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!images.image_1 || !images.image_2 || !name || !price) {
+    if (!images.image_1 || !name || !price) {
       alert('Please enter complete information');
       return;
     }
@@ -44,6 +50,9 @@ function ProductAdmin() {
       price,
       image_1: uploadedImages.image_1,
       image_2: uploadedImages.image_2,
+      image_3: uploadedImages.image_3,
+      image_4: uploadedImages.image_4,
+      image_5: uploadedImages.image_5,
       createdAt: serverTimestamp()
     })
       .then(() => {
@@ -92,6 +101,30 @@ function ProductAdmin() {
               type="file"
               className="form-control"
               onChange={(e) => handleImageUpload(e, 'image_2')}
+            />
+          </label>
+          <label className="flex flex-col border rounded-lg p-3">
+            Ảnh 3
+            <input
+              type="file"
+              className="form-control"
+              onChange={(e) => handleImageUpload(e, 'image_3')}
+            />
+          </label>
+          <label className="flex flex-col border rounded-lg p-3">
+            Ảnh 4
+            <input
+              type="file"
+              className="form-control"
+              onChange={(e) => handleImageUpload(e, 'image_4')}
+            />
+          </label>
+          <label className="flex flex-col border rounded-lg p-3">
+            Ảnh 5
+            <input
+              type="file"
+              className="form-control"
+              onChange={(e) => handleImageUpload(e, 'image_5')}
             />
           </label>
         </div>

@@ -46,7 +46,7 @@ export default function Products() {
     return { data, loading, error };
   };
   const { data: products } = useRealtimeDatabase('Products');
-  console.log(products);
+
   return (
     <div className="min-h-screen bg-gray-100 p-8">
       <AutoSlider />
@@ -62,6 +62,9 @@ export default function Products() {
               giaban={product.price}
               image_1={product.image_1}
               image_2={product.image_2}
+              image_3={product.image_3}
+              image_4={product.image_4}
+              image_5={product.image_5}
               id={product.id}
             />
           ))}
