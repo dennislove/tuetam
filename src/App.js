@@ -24,6 +24,7 @@ import {
   getStorage,
   ref as storageRef,
   uploadBytes,
+  listAll,
   getDownloadURL
 } from 'firebase/storage';
 import PageTitleManager from './routes/PageTitleManager';

@@ -1,24 +1,33 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getStorage, ref, listAll, getDownloadURL } from 'firebase/storage';
+import { storage } from '../../App';
 
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-const images = [
-  './images/products/4la_kim_nam.png',
-  './images/products/4la_moc_tuitien.png',
-  './images/products/4la_moc.png',
-  './images/products/108 hat 8 li.png',
-  './images/products/hoasen_moc.png',
-  './images/products/moc_trungnien.png',
-  './images/products/ngudieu_kim.png',
-  './images/products/ngudieu_moc.png',
-  './images/products/ngudieu_thuy.png',
-  './images/products/product_1.png'
-];
+
 export default function Gallery() {
-  const [loadedImages, setLoadedImages] = useState(
-    new Array(images.length).fill(false)
-  );
+  const [images, setImages] = useState([]);
+  const [loadedImages, setLoadedImages] = useState([]);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      const folderRef = ref(storage, 'gallery'); //
+      try {
+        const result = await listAll(folderRef);
+        const urls = await Promise.all(
+          result.items.map(async (item) => getDownloadURL(item))
+        );
+        setImages(urls);
+        setLoadedImages(new Array(urls.length).fill(false));
+      } catch (error) {
+        console.error('Lỗi khi lấy ảnh:', error);
+      }
+    };
+
+    fetchImages();
+  }, []);
+  console.log(images);
 
   // Xử lý khi ảnh tải xong
   const handleImageLoad = (index) => {
@@ -28,24 +37,22 @@ export default function Gallery() {
       return newLoaded;
     });
   };
+
   return (
-    <div className="min-h-screen max-w-7xl mx-auto  p-6 flex flex-col items-center">
-      <h2 className=" font-oxa font-semibold text-[50px] text-primary capitalize">
+    <div className="min-h-screen max-w-7xl mx-auto p-6 flex flex-col items-center">
+      <h2 className="font-oxa font-semibold text-[50px] text-primary capitalize">
         Bộ Sưu tập
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
-        {images.map((src, index) => (
+        {images.map((url, index) => (
           <div key={index} className="relative w-full">
             {/* Skeleton hiển thị khi ảnh chưa tải xong */}
             {!loadedImages[index] && <SkeletonGallery />}
-
             <motion.img
-              src={src}
+              src={url}
               alt={`Gallery ${index}`}
               loading="lazy"
-              className={`rounded-3xl shadow-lg hover:opacity-80 w-full h-full object-cover ${
-                loadedImages[index] ? 'block' : 'hidden'
-              }`}
+              className="rounded-3xl shadow-lg hover:opacity-80 w-full h-full object-cover"
               whileHover={{ scale: 1.05 }}
               onLoad={() => handleImageLoad(index)} // Ẩn Skeleton khi ảnh tải xong
             />
@@ -55,6 +62,7 @@ export default function Gallery() {
     </div>
   );
 }
+
 const SkeletonGallery = () => (
   <Skeleton
     height={'100%'}
